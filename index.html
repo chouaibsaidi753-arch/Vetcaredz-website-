@@ -1,163 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VetCareDZ - Compassionate Veterinary Care</title>
+    <title>عيادة الدكتور سعيدي للطب البيطري - VetCareDZ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Cairo', sans-serif; }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1581888227599-779811939961?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .article-card {
+            transition: all 0.3s ease;
+            border-right: 5px solid #10b981;
+        }
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link:hover { color: #10b981; }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 scroll-smooth">
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="max-w-700px mx-auto px-4">
+    <!-- التنقل (Navigation) -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
-                    <a href="#" class="text-2xl font-bold text-blue-600 flex items-center">
-                        <i class="fas fa-paw mr-2"></i>
+                    <a href="#" class="text-2xl font-bold text-emerald-600 flex items-center">
+                        <i class="fas fa-paw ml-2"></i>
                         <span>VetCareDZ</span>
                     </a>
                 </div>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="hover:text-blue-600 transition duration-300">Home</a>
-                    <a href="#services" class="hover:text-blue-600 transition duration-300">Services</a>
-                    <a href="#about" class="hover:text-blue-600 transition duration-300">About Us</a>
-                    <a href="#contact" class="hover:text-blue-600 transition duration-300">Contact</a>
-                    <a href="#appointment" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300">Book Now</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="outline-none">
-                        <i class="fas fa-bars text-2xl text-gray-600"></i>
-                    </button>
+                <div class="hidden md:flex space-x-8 space-x-reverse items-center">
+                    <a href="#home" class="nav-link font-semibold">الرئيسية</a>
+                    <a href="#services" class="nav-link font-semibold">خدماتنا</a>
+                    <a href="#articles" class="nav-link font-semibold">نصائح بيطرية</a>
+                    <a href="#contact" class="nav-link font-semibold">اتصل بنا</a>
+                    <a href="https://wa.me/213774716118" class="bg-emerald-600 text-white px-6 py-2 rounded-full hover:bg-emerald-700 transition duration-300">احجز موعد</a>
                 </div>
             </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
-            <a href="#home" class="block py-2 px-4 text-sm hover:bg-blue-50">Home</a>
-            <a href="#services" class="block py-2 px-4 text-sm hover:bg-blue-50">Services</a>
-            <a href="#about" class="block py-2 px-4 text-sm hover:bg-blue-50">About Us</a>
-            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-blue-50">Contact</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section h-screen flex items-center justify-center text-center text-white">
-        <div class="max-w-4xl px-4 text-center">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">Expert Care for Your Best Friend</h1>
-            <p class="text-xl md:text-2xl mb-8 opacity-90">Providing compassionate and professional veterinary services for the pets you love.</p>
-            <div class="space-x-4">
-                <a href="#services" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">Our Services</a>
-                <a href="#appointment" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300">Book Appointment</a>
+    <!-- قسم الترحيب (Hero Section) -->
+    <section id="home" class="hero-section h-screen flex items-center justify-center text-center text-white pt-16">
+        <div class="max-w-4xl px-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">رعاية بيطرية خبيرة لحيواناتكم</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">نقدم أفضل الخدمات الطبية البيطرية للمزارعين وأصحاب الحيوانات الأليفة في تيبازة والجزائر.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#articles" class="bg-white text-emerald-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">تصفح المقالات</a>
+                <a href="https://wa.me/213774716118" class="bg-emerald-600 text-white px-8 py-3 rounded-full font-bold hover:bg-emerald-700 transition">تواصل معنا</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- قسم الخدمات (Services) -->
     <section id="services" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-4">Our Services</h2>
-            <p class="text-gray-600 mb-12 max-w-2xl mx-auto">We offer a wide range of veterinary services to ensure your pet stays healthy and happy throughout their life.</p>
+            <h2 class="text-4xl font-bold mb-4 text-emerald-800">خدماتنا المتميزة</h2>
+            <p class="text-gray-600 mb-12 max-w-2xl mx-auto">نحن هنا لضمان صحة وسلامة حيواناتكم من خلال رعاية طبية متكاملة.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 border border-gray-100 rounded-2xl hover:shadow-xl transition duration-300">
-                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-stethoscope text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Wellness Exams</h3>
-                    <p class="text-gray-600">Regularly scheduled check-ups are the best way to keep your pet healthy and catch potential issues early.</p>
+                <div class="p-8 bg-emerald-50 rounded-2xl border border-emerald-100">
+                    <i class="fas fa-stethoscope text-4xl text-emerald-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">الفحص الطبي الشامل</h3>
+                    <p class="text-gray-600">تشخيص دقيق ومتابعة دورية للحالة الصحية للحيوانات.</p>
                 </div>
-                <div class="p-8 border border-gray-100 rounded-2xl hover:shadow-xl transition duration-300">
-                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-syringe text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Vaccinations</h3>
-                    <p class="text-gray-600">Protect your pet from common diseases with our comprehensive vaccination programs tailored to their lifestyle.</p>
+                <div class="p-8 bg-emerald-50 rounded-2xl border border-emerald-100">
+                    <i class="fas fa-syringe text-4xl text-emerald-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">التلقيح والوقاية</h3>
+                    <p class="text-gray-600">برامج تطعيم وقائية ضد الأمراض المعدية والطفيليات.</p>
                 </div>
-                <div class="p-8 border border-gray-100 rounded-2xl hover:shadow-xl transition duration-300">
-                    <div class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-heartbeat text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Emergency Care</h3>
-                    <p class="text-gray-600">Our team is ready to provide urgent medical attention when your pet needs it most, during our regular hours.</p>
+                <div class="p-8 bg-emerald-50 rounded-2xl border border-emerald-100">
+                    <i class="fas fa-tractor text-4xl text-emerald-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">زيارات ميدانية للمزارع</h3>
+                    <p class="text-gray-600">نصل إليكم في مزارعكم لتقديم الرعاية اللازمة للمواشي والدواجن.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="About VetCareDZ" class="rounded-2xl shadow-2xl">
-            </div>
-            <div class="md:w-1/2 md:pl-16">
-                <h2 class="text-4xl font-bold mb-6">Why Choose VetCareDZ?</h2>
-                <p class="text-lg text-gray-600 mb-6">At VetCareDZ, we understand that your pet is a member of your family. That's why we treat every patient with the same care and compassion we would give our own pets.</p>
-                <ul class="space-y-4">
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-blue-500 mr-3"></i>
-                        <span>Experienced and Compassionate Staff</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-blue-500 mr-3"></i>
-                        <span>State-of-the-art Medical Equipment</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-blue-500 mr-3"></i>
-                        <span>Personalized Care Plans for Every Pet</span>
-                    </li>
-                </ul>
+    <!-- قسم المقالات (Articles) -->
+    <section id="articles" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-4 text-center text-emerald-800">ركن المعرفة البيطرية</h2>
+            <p class="text-gray-600 mb-12 text-center">معلومات علمية موثوقة لمساعدتكم في تربية حيواناتكم.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- مقال الأغنام -->
+                <div class="article-card bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-sheep text-3xl text-emerald-600 ml-4"></i>
+                        <h3 class="text-2xl font-bold">تربية الأغنام في الجزائر</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">لضمان إنتاجية عالية، يجب التركيز على:</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>التغذية المتوازنة الغنية بالبروتينات والأملاح المعدنية.</li>
+                        <li>الوقاية من الطفيليات الداخلية والخارجية بشكل دوري.</li>
+                        <li>توفير تهوية جيدة في الحظائر لتجنب الأمراض التنفسية.</li>
+                    </ul>
+                </div>
+
+                <!-- مقال الدواجن -->
+                <div class="article-card bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-feather text-3xl text-emerald-600 ml-4"></i>
+                        <h3 class="text-2xl font-bold">إدارة مزارع الدواجن</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">أساسيات النجاح في تربية الدواجن:</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>الالتزام الصارم ببرنامج التلقيحات (نيوكاسل، غومبورو).</li>
+                        <li>مراقبة جودة المياه والأعلاف يومياً.</li>
+                        <li>الحفاظ على درجة حرارة مستقرة داخل العنبر.</li>
+                    </ul>
+                </div>
+
+                <!-- مقال القطط والكلاب -->
+                <div class="article-card bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-cat text-3xl text-emerald-600 ml-4"></i>
+                        <h3 class="text-2xl font-bold">صحة الحيوانات الأليفة</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">نصائح لأصحاب القطط والكلاب:</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>التلقيح ضد داء الكلب (السعار) إلزامي وضروري.</li>
+                        <li>تنظيف الأسنان والأذنين يقي من التهابات خطيرة.</li>
+                        <li>تجنب تقديم الأطعمة المنزلية الغنية بالتوابل والسكريات.</li>
+                    </ul>
+                </div>
+
+                <!-- مقال عام -->
+                <div class="article-card bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-microscope text-3xl text-emerald-600 ml-4"></i>
+                        <h3 class="text-2xl font-bold">الأمن الحيوي في المزارع</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">كيف تحمي مزرعتك من الأوبئة؟</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>تقليل دخول الزوار والسيارات الغريبة للمزرعة.</li>
+                        <li>استخدام أحواض التطهير عند مداخل العنابر.</li>
+                        <li>التخلص الصحي من الحيوانات النافقة بعيداً عن القطيع.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- قسم الاتصال (Contact) -->
     <section id="contact" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
-                    <h2 class="text-4xl font-bold mb-6">Get in touch</h2>
-                    <p class="text-gray-600 mb-8">Have questions or want to book an appointment? We're here to help you and your pet.</p>
-                    <div class="space-y-4">
+                    <h2 class="text-4xl font-bold mb-6 text-emerald-800">تواصل معنا</h2>
+                    <p class="text-gray-600 mb-8 text-lg">نحن متواجدون لخدمتكم والإجابة على استفساراتكم الطبية.</p>
+                    <div class="space-y-6">
                         <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-blue-600 w-8"></i>
-                            <span>Tipaza,Algeria</span>
+                            <i class="fas fa-map-marker-alt text-emerald-600 text-2xl ml-4"></i>
+                            <span class="text-lg">تيبازة، الجزائر</span>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-phone text-blue-600 w-8"></i>
-                            <span>+213 774 716 118</span>
+                            <i class="fas fa-phone text-emerald-600 text-2xl ml-4"></i>
+                            <span class="text-lg" dir="ltr">+213 774 71 61 18</span>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-envelope text-blue-600 w-8"></i>
-                            <span>chouaibsaidi753@gmail.com</span>
+                            <i class="fas fa-envelope text-emerald-600 text-2xl ml-4"></i>
+                            <span class="text-lg">chouaibsaidi753@gmail.com</span>
+                        </div>
+                        <div class="mt-8">
+                            <a href="https://wa.me/213774716118" class="inline-flex items-center bg-green-500 text-white px-8 py-3 rounded-full font-bold hover:bg-green-600 transition">
+                                <i class="fab fa-whatsapp ml-2 text-xl"></i>
+                                راسلنا عبر واتساب
+                            </a>
                         </div>
                     </div>
                 </div>
-                <form class="space-y-4">
-                    <input type="text" placeholder="Your Name" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
-                    <input type="email" placeholder="Your Email" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
-                    <textarea placeholder="Your Message" rows="4" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500"></textarea>
-                    <button class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition duration-300">Send Message</button>
-                </form>
+                <div class="bg-emerald-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-emerald-800 text-center">أرسل لنا رسالة</h3>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="الاسم الكامل" class="w-full p-4 rounded-lg border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        <input type="email" placeholder="البريد الإلكتروني" class="w-full p-4 rounded-lg border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        <textarea placeholder="كيف يمكننا مساعدتك؟" rows="4" class="w-full p-4 rounded-lg border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+                        <button class="w-full bg-emerald-600 text-white font-bold py-4 rounded-lg hover:bg-emerald-700 transition">إرسال</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="mb-8">
-                <a href="#" class="text-2xl font-bold text-blue-400 flex justify-center items-center">
-                    <i class="fas fa-paw mr-2"></i>
-                    <span>VetCareDZ</span>
-                </a>
-            </div>
-            <p class="text-gray-500">&copy; 2024 VetCareDZ. All rights reserved.</p>
+    <footer class="bg-emerald-900 text-white py-12 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-xl font-bold mb-4">VetCareDZ</p>
+            <p class="opacity-70">&copy; 2024 جميع الحقوق محفوظة للدكتور سعيدي.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
