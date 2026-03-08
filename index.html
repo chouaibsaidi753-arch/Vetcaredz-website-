@@ -1,203 +1,1404 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عيادة الدكتور سعيدي للطب البيطري - VetCareDZ</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { font-family: 'Cairo', sans-serif; }
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1581888227599-779811939961?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        .article-card {
-            transition: all 0.3s ease;
-            border-right: 5px solid #10b981;
-        }
-        .article-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        .nav-link:hover { color: #10b981; }
-    </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VetCareDZ — د. سعيدي شعيب | طبيب بيطري تيبازة</title>
+<meta name="description" content="عيادة الدكتور سعيدي شعيب للطب البيطري — خبرة بيطرية موثوقة لحيواناتكم في تيبازة والجزائر">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Tajawal:wght@300;400;500;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-deep:#1a3d2b;--green-mid:#2d6a4f;--green-light:#52b788;
+  --cream:#f7f2e9;--cream-dark:#ede5d4;--gold:#c9a84c;--gold-light:#e8cb7a;
+  --text-dark:#1a1a1a;--text-mid:#3d3d3d;--text-light:#7a7a7a;
+  --white:#ffffff;--red:#c0392b;--blue:#2471a3;--orange:#d35400;
+  --shadow:0 8px 40px rgba(26,61,43,.12);--shadow-lg:0 20px 60px rgba(26,61,43,.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Tajawal',serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden;line-height:1.7}
+body.lang-en,body.lang-fr{font-family:'Libre Baskerville',serif;direction:ltr}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--green-mid);border-radius:3px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:16px 4%;background:rgba(26,61,43,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.2);transition:all .3s}
+nav.scrolled{padding:10px 4%;box-shadow:0 4px 30px rgba(0,0,0,.25)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-icon{width:40px;height:40px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px}
+.nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;color:var(--white)}
+.nav-logo-text span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:22px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.85rem;transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
+.nav-links a:hover{color:var(--gold-light)}.nav-links a:hover::after{transform:scaleX(1)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang-switcher{display:flex;gap:3px;background:rgba(255,255,255,.1);border-radius:20px;padding:3px}
+.lang-btn{padding:3px 9px;border:none;background:transparent;color:rgba(255,255,255,.7);cursor:pointer;border-radius:15px;font-size:.72rem;font-weight:500;transition:all .2s;font-family:inherit}
+.lang-btn.active{background:var(--gold);color:var(--green-deep);font-weight:700}
+.nav-cta{background:var(--gold);color:var(--green-deep);padding:8px 18px;border-radius:25px;text-decoration:none;font-weight:700;font-size:.82rem;transition:all .2s}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+.hamburger span{width:24px;height:2px;background:white;border-radius:2px;transition:all .3s}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--green-deep);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:white;text-decoration:none;font-size:1.4rem;font-family:'Cormorant Garamond',serif;font-weight:600}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-menu-close{position:absolute;top:22px;left:22px;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer}
+
+/* HERO */
+#home{min-height:100vh;background:var(--green-deep);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;padding:120px 5% 80px}
+.hero-bg{position:absolute;inset:0;opacity:.07;background-image:radial-gradient(circle at 20% 50%,var(--gold) 0%,transparent 50%),radial-gradient(circle at 80% 20%,var(--green-light) 0%,transparent 40%),radial-gradient(circle at 60% 80%,var(--gold) 0%,transparent 35%)}
+.hero-pattern{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M20 20.5V18H0v5h5v5H0v5h20v-2.5h-.3A5.5 5.5 0 0 1 14.5 20.5H20zm5-4v-1h-4v4h4v-1h-4v-2h4zm0-4H0V0h25v12.5zM40 0h-5v5h5V0zm0 10h-5v5h5v-5zm0 10h-5v5h5v-5zm0 10h-5v5h5v-5z'/%3E%3C/g%3E%3C/svg%3E")}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.35);color:var(--gold-light);padding:6px 16px;border-radius:20px;font-size:.8rem;margin-bottom:24px;animation:fadeInDown .8s ease both}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,7vw,5rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:10px;animation:fadeInUp .9s ease .1s both}
+.hero-title span{color:var(--gold);font-style:italic}
+.hero-subtitle{font-size:clamp(.95rem,2vw,1.15rem);color:rgba(255,255,255,.65);max-width:540px;margin:0 auto 36px;line-height:1.85;animation:fadeInUp 1s ease .2s both}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeInUp 1.1s ease .3s both}
+.btn-primary{background:var(--gold);color:var(--green-deep);padding:13px 30px;border-radius:35px;text-decoration:none;font-weight:700;font-size:.92rem;transition:all .3s;box-shadow:0 4px 20px rgba(201,168,76,.35);border:none;cursor:pointer;font-family:inherit}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,.45)}
+.btn-secondary{background:transparent;color:var(--white);padding:13px 30px;border-radius:35px;text-decoration:none;font-weight:500;font-size:.92rem;border:1px solid rgba(255,255,255,.35);transition:all .3s}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:flex;gap:50px;margin-top:60px;justify-content:center;flex-wrap:wrap;animation:fadeInUp 1.2s ease .5s both}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:var(--gold);line-height:1}
+.hero-stat-label{color:rgba(255,255,255,.55);font-size:.8rem;margin-top:4px}
+.scroll-ind{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);animation:bounce 2s infinite;color:rgba(255,255,255,.35);font-size:1.4rem;cursor:pointer}
+
+/* SECTION COMMONS */
+section{padding:85px 5%}
+.section-label{display:inline-flex;align-items:center;gap:8px;color:var(--green-mid);font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.section-label::before,.section-label::after{content:'';width:28px;height:1px;background:var(--green-light)}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700;color:var(--green-deep);line-height:1.2;margin-bottom:14px}
+.section-title span{color:var(--gold);font-style:italic}
+.section-desc{color:var(--text-light);max-width:560px;line-height:1.85;font-size:.95rem}
+.section-header{margin-bottom:50px}
+.section-header.centered{text-align:center}
+.section-header.centered .section-label{justify-content:center}
+.section-header.centered .section-desc{margin:0 auto}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ABOUT */
+#about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:65px;align-items:center}
+.about-img-wrap{position:relative}
+.about-img-frame{width:100%;aspect-ratio:4/5;background:linear-gradient(135deg,var(--green-deep),var(--green-mid));border-radius:12px 12px 60px 12px;display:flex;align-items:center;justify-content:center;font-size:7rem;position:relative;overflow:hidden}
+.about-img-frame::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 70%,rgba(201,168,76,.2),transparent 60%)}
+.about-deco{position:absolute;bottom:-18px;left:-18px;width:160px;height:160px;border:2px solid var(--gold);border-radius:12px;opacity:.3}
+.about-badge-card{position:absolute;top:28px;right:-22px;background:var(--white);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:10px;min-width:165px}
+body.lang-en .about-badge-card,body.lang-fr .about-badge-card{right:auto;left:-22px}
+.about-badge-card .icon{font-size:1.8rem}
+.about-badge-card strong{display:block;font-size:1rem;color:var(--green-deep)}
+.about-badge-card small{color:var(--text-light);font-size:.76rem}
+.about-creds{background:var(--cream);border-radius:14px;padding:20px 22px;margin-bottom:24px;border-right:4px solid var(--gold)}
+body.lang-en .about-creds,body.lang-fr .about-creds{border-right:none;border-left:4px solid var(--gold)}
+.about-creds h4{font-size:.82rem;font-weight:700;color:var(--text-light);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.cred-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;font-size:.88rem;color:var(--text-mid)}
+.cred-item:last-child{margin-bottom:0}
+.cred-item .ci{font-size:1rem;flex-shrink:0;margin-top:1px}
+.about-features{display:flex;flex-direction:column;gap:13px;margin-bottom:28px}
+.about-feature{display:flex;align-items:flex-start;gap:13px;padding:14px 18px;background:var(--cream);border-radius:12px;border-right:3px solid var(--gold);transition:transform .2s}
+body.lang-en .about-feature,body.lang-fr .about-feature{border-right:none;border-left:3px solid var(--gold)}
+.about-feature:hover{transform:translateX(-3px)}
+body.lang-en .about-feature:hover,body.lang-fr .about-feature:hover{transform:translateX(3px)}
+.about-feature .icon{font-size:1.2rem;margin-top:1px;flex-shrink:0}
+.about-feature h4{font-size:.9rem;font-weight:700;color:var(--green-deep);margin-bottom:2px}
+.about-feature p{font-size:.82rem;color:var(--text-light);line-height:1.6}
+
+/* SERVICES */
+#services{background:var(--cream)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.service-card{background:var(--white);border-radius:18px;padding:32px 26px;box-shadow:0 2px 18px rgba(26,61,43,.06);transition:all .3s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green-light),var(--gold));transform:scaleX(0);transition:transform .3s}
+.service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--green-deep),var(--green-mid));display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px}
+.service-card h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--green-deep);margin-bottom:9px}
+.service-card p{font-size:.85rem;color:var(--text-light);line-height:1.75}
+
+/* GALLERY */
+#gallery{background:var(--green-deep);padding:85px 5%}
+#gallery .section-title{color:var(--white)}
+#gallery .section-label{color:var(--gold-light)}
+#gallery .section-label::before,#gallery .section-label::after{background:var(--gold-light)}
+#gallery .section-desc{color:rgba(255,255,255,.6)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery-item{border-radius:12px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:4/3;background:var(--green-mid)}
+.gallery-item:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:unset}
+.gallery-item-inner{width:100%;height:100%;min-height:180px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;transition:transform .4s;background:linear-gradient(135deg,var(--green-mid),rgba(26,61,43,.8))}
+.gallery-item:first-child .gallery-item-inner{min-height:320px;font-size:5.5rem}
+.gallery-item:hover .gallery-item-inner{transform:scale(1.06)}
+.gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,61,43,.85),transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:18px}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-overlay p{color:white;font-size:.88rem;font-weight:600}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--cream-dark)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.testimonial-card{background:var(--white);border-radius:18px;padding:28px;box-shadow:0 2px 18px rgba(26,61,43,.06);position:relative}
+.testimonial-card::before{content:'"';font-family:'Cormorant Garamond',serif;position:absolute;top:18px;right:26px;font-size:4.5rem;color:var(--green-light);opacity:.22;line-height:1}
+body.lang-en .testimonial-card::before,body.lang-fr .testimonial-card::before{right:auto;left:26px}
+.testimonial-stars{color:var(--gold);font-size:.88rem;margin-bottom:12px}
+.testimonial-text{font-size:.9rem;color:var(--text-mid);line-height:1.85;margin-bottom:20px;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:11px;border-top:1px solid var(--cream);padding-top:16px}
+.testimonial-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--green-mid),var(--green-light));display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.testimonial-author strong{display:block;font-size:.88rem;color:var(--green-deep)}
+.testimonial-author small{color:var(--text-light);font-size:.76rem}
+
+/* BOOKING */
+#booking{background:var(--white)}
+.booking-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:55px;align-items:start}
+.booking-info-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:24px}
+.booking-info-icon{width:46px;height:46px;border-radius:13px;flex-shrink:0;background:linear-gradient(135deg,var(--green-deep),var(--green-mid));display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.booking-info-item h4{font-size:.9rem;font-weight:700;color:var(--green-deep);margin-bottom:2px}
+.booking-info-item p{font-size:.83rem;color:var(--text-light);line-height:1.6}
+.booking-form{background:var(--cream);border-radius:20px;padding:36px;box-shadow:var(--shadow)}
+.booking-form h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--green-deep);margin-bottom:24px;font-weight:700}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.8rem;font-weight:700;color:var(--green-deep);margin-bottom:6px;letter-spacing:.3px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1.5px solid #e0d9ce;border-radius:10px;background:var(--white);font-family:inherit;font-size:.88rem;color:var(--text-dark);transition:all .2s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green-mid);box-shadow:0 0 0 3px rgba(45,106,79,.1)}
+.form-group textarea{resize:vertical;min-height:90px}
+.btn-book{width:100%;padding:14px;border:none;border-radius:12px;background:linear-gradient(135deg,var(--green-deep),var(--green-mid));color:white;font-size:.95rem;font-weight:700;cursor:pointer;transition:all .3s;font-family:inherit}
+.btn-book:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(26,61,43,.35)}
+.form-success{display:none;text-align:center;padding:28px;color:var(--green-mid)}
+.form-success .check{font-size:2.8rem;margin-bottom:10px}
+.form-success h4{font-size:1.15rem;margin-bottom:7px}
+.form-success p{font-size:.86rem;color:var(--text-light)}
+
+/* ═══════════ ARTICLES ═══════════ */
+#articles{background:var(--cream)}
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px;margin-bottom:16px}
+.article-card{background:var(--white);border-radius:18px;overflow:hidden;box-shadow:0 2px 16px rgba(26,61,43,.07);transition:all .3s;cursor:pointer}
+.article-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.article-img{height:170px;display:flex;align-items:center;justify-content:center;font-size:3.8rem;position:relative}
+.article-body{padding:24px}
+.article-tag{display:inline-block;padding:3px 10px;border-radius:10px;font-size:.72rem;font-weight:700;margin-bottom:10px;letter-spacing:.5px}
+.tag-livestock{background:rgba(211,84,0,.12);color:var(--orange)}
+.tag-poultry{background:rgba(201,168,76,.15);color:#a0762a}
+.tag-pets{background:rgba(36,113,163,.12);color:var(--blue)}
+.tag-bio{background:rgba(45,106,79,.12);color:var(--green-mid)}
+.tag-cattle{background:rgba(192,57,43,.1);color:var(--red)}
+.tag-nutrition{background:rgba(82,183,136,.18);color:#1a6b4a}
+.tag-parasites{background:rgba(120,60,20,.1);color:#7b4213}
+.tag-emergency{background:rgba(192,57,43,.12);color:var(--red)}
+.article-body h3{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:700;color:var(--green-deep);margin-bottom:9px;line-height:1.35}
+.article-body p{font-size:.84rem;color:var(--text-light);line-height:1.75;margin-bottom:14px}
+.article-read-more{font-size:.8rem;font-weight:700;color:var(--green-mid);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap .2s}
+.article-read-more:hover{gap:9px}
+
+/* ARTICLE MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:2000;overflow-y:auto;padding:30px 16px}
+.modal-overlay.open{display:flex;align-items:flex-start;justify-content:center}
+.modal-box{background:var(--white);border-radius:22px;max-width:780px;width:100%;padding:44px;position:relative;margin:auto;animation:fadeInUp .4s ease both}
+.modal-close{position:absolute;top:18px;left:18px;background:var(--cream);border:none;width:36px;height:36px;border-radius:50%;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+body.lang-en .modal-close,body.lang-fr .modal-close{left:auto;right:18px}
+.modal-close:hover{background:var(--cream-dark)}
+.modal-tag{display:inline-block;padding:4px 12px;border-radius:10px;font-size:.75rem;font-weight:700;margin-bottom:16px}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;color:var(--green-deep);line-height:1.25;margin-bottom:8px}
+.modal-meta{font-size:.8rem;color:var(--text-light);margin-bottom:24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.modal-meta span{display:flex;align-items:center;gap:4px}
+.modal-content{font-size:.93rem;color:var(--text-mid);line-height:1.95}
+.modal-content h4{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--green-deep);margin:22px 0 10px}
+.modal-content ul{padding-right:20px;margin-bottom:14px}
+body.lang-en .modal-content ul,body.lang-fr .modal-content ul{padding-right:0;padding-left:20px}
+.modal-content ul li{margin-bottom:7px}
+.modal-content .highlight-box{background:var(--cream);border-radius:12px;padding:18px 20px;margin:18px 0;border-right:3px solid var(--gold)}
+body.lang-en .modal-content .highlight-box,body.lang-fr .modal-content .highlight-box{border-right:none;border-left:3px solid var(--gold)}
+.modal-content .highlight-box strong{color:var(--green-deep);display:block;margin-bottom:6px;font-size:.9rem}
+.modal-content .warning-box{background:rgba(192,57,43,.07);border-radius:12px;padding:16px 18px;margin:14px 0;border-right:3px solid var(--red)}
+body.lang-en .modal-content .warning-box,body.lang-fr .modal-content .warning-box{border-right:none;border-left:3px solid var(--red)}
+.modal-content .warning-box strong{color:var(--red);display:block;margin-bottom:5px;font-size:.88rem}
+.modal-content table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.85rem}
+.modal-content table th{background:var(--green-deep);color:white;padding:10px 14px;text-align:right}
+body.lang-en .modal-content table th,body.lang-fr .modal-content table th{text-align:left}
+.modal-content table td{padding:9px 14px;border-bottom:1px solid var(--cream)}
+.modal-content table tr:nth-child(even) td{background:var(--cream)}
+.modal-content .source{font-size:.78rem;color:var(--text-light);margin-top:20px;padding-top:14px;border-top:1px solid var(--cream);font-style:italic}
+
+/* CONTACT */
+#contact{background:var(--green-deep)}
+#contact .section-title{color:var(--white)}
+#contact .section-label{color:var(--gold-light)}
+#contact .section-label::before,#contact .section-label::after{background:var(--gold-light)}
+#contact .section-desc{color:rgba(255,255,255,.6)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:48px;align-items:start}
+.contact-items{display:flex;flex-direction:column;gap:16px}
+.contact-item{display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.07);border-radius:13px;padding:18px;border:1px solid rgba(255,255,255,.1);transition:background .2s}
+.contact-item:hover{background:rgba(255,255,255,.1)}
+.contact-item-icon{width:42px;height:42px;border-radius:11px;flex-shrink:0;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1rem}
+.contact-item strong{display:block;color:var(--gold-light);font-size:.78rem;margin-bottom:3px}
+.contact-item a,.contact-item p{color:rgba(255,255,255,.85);font-size:.88rem;text-decoration:none;line-height:1.5}
+.contact-item a:hover{color:var(--gold-light)}
+.social-links{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.social-link{display:flex;align-items:center;gap:7px;padding:9px 14px;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:white;text-decoration:none;font-size:.82rem;transition:all .2s}
+.social-link:hover{background:var(--gold);color:var(--green-deep);border-color:var(--gold)}
+.map-wrap{border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.3);height:320px;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;border:1px solid rgba(255,255,255,.1)}
+.map-wrap .map-icon{font-size:2.8rem}
+.map-wrap p{color:rgba(255,255,255,.6);font-size:.88rem}
+.map-wrap a{display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:var(--green-deep);padding:10px 20px;border-radius:24px;text-decoration:none;font-weight:700;font-size:.83rem}
+
+/* FOOTER */
+footer{background:#0f2419;padding:46px 5% 28px;text-align:center;border-top:1px solid rgba(201,168,76,.2)}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--white);margin-bottom:10px}
+.footer-logo span{color:var(--gold)}
+footer p{color:rgba(255,255,255,.4);font-size:.82rem;margin-bottom:5px}
+.footer-links{display:flex;justify-content:center;gap:22px;margin:18px 0;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-divider{height:1px;background:rgba(255,255,255,.08);margin:20px 0}
+
+/* WHATSAPP FAB */
+.whatsapp-fab{position:fixed;bottom:26px;left:26px;z-index:999;width:54px;height:54px;border-radius:50%;background:#25d366;color:white;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;transition:all .3s;animation:pulseGreen 2s infinite}
+.whatsapp-fab:hover{transform:scale(1.1)}
+
+/* ANIMATIONS */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+@keyframes pulseGreen{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 35px rgba(37,211,102,.65)}}
+
+@media(max-width:900px){
+  .about-grid,.booking-wrap,.contact-grid{grid-template-columns:1fr;gap:36px}
+  .about-img-wrap{max-width:380px;margin:0 auto}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-item:first-child{grid-column:span 2}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .form-row{grid-template-columns:1fr}
+  .articles-grid{grid-template-columns:1fr}
+  .modal-box{padding:28px 22px}
+}
+@media(max-width:600px){
+  section{padding:60px 5%}
+  .gallery-grid{grid-template-columns:1fr}
+  .gallery-item:first-child{grid-column:span 1}
+  .hero-stats{gap:28px}
+}
+/* LEGAL NOTICE */
+.legal-notice{display:flex;gap:18px;align-items:flex-start;background:linear-gradient(135deg,rgba(26,61,43,.06),rgba(201,168,76,.08));border:1.5px solid rgba(201,168,76,.4);border-radius:16px;padding:22px 26px;margin-bottom:40px}
+.legal-notice-icon{font-size:2rem;flex-shrink:0;margin-top:2px}
+.legal-notice-title{display:block;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--green-deep);margin-bottom:8px}
+.legal-notice-text{font-size:.83rem;color:var(--text-mid);line-height:1.9}
+.legal-notice-text strong{color:var(--green-deep)}
+.legal-laws{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.legal-law-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:var(--green-deep);color:var(--gold-light);border-radius:20px;font-size:.73rem;font-weight:700}
+</style>
 </head>
-<body class="bg-gray-50 text-gray-800 scroll-smooth">
+<body>
 
-    <!-- التنقل (Navigation) -->
-    <nav class="bg-white shadow-md fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <a href="#" class="text-2xl font-bold text-emerald-600 flex items-center">
-                        <i class="fas fa-paw ml-2"></i>
-                        <span>VetCareDZ</span>
-                    </a>
-                </div>
-                <div class="hidden md:flex space-x-8 space-x-reverse items-center">
-                    <a href="#home" class="nav-link font-semibold">الرئيسية</a>
-                    <a href="#services" class="nav-link font-semibold">خدماتنا</a>
-                    <a href="#articles" class="nav-link font-semibold">نصائح بيطرية</a>
-                    <a href="#contact" class="nav-link font-semibold">اتصل بنا</a>
-                    <a href="https://wa.me/213774716118" class="bg-emerald-600 text-white px-6 py-2 rounded-full hover:bg-emerald-700 transition duration-300">احجز موعد</a>
-                </div>
-            </div>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMob()">✕</button>
+  <a href="#home" onclick="closeMob()" data-k="nav_home">الرئيسية</a>
+  <a href="#about" onclick="closeMob()" data-k="nav_about">الطبيب</a>
+  <a href="#services" onclick="closeMob()" data-k="nav_services">الخدمات</a>
+  <a href="#gallery" onclick="closeMob()" data-k="nav_gallery">المعرض</a>
+  <a href="#articles" onclick="closeMob()" data-k="nav_articles">مقالات</a>
+  <a href="#booking" onclick="closeMob()" data-k="nav_booking">حجز موعد</a>
+  <a href="#contact" onclick="closeMob()" data-k="nav_contact">اتصل بنا</a>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-icon">🐾</div>
+    <span class="nav-logo-text">Vet<span>Care</span>DZ</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home" data-k="nav_home">الرئيسية</a></li>
+    <li><a href="#about" data-k="nav_about">الطبيب</a></li>
+    <li><a href="#services" data-k="nav_services">الخدمات</a></li>
+    <li><a href="#gallery" data-k="nav_gallery">المعرض</a></li>
+    <li><a href="#testimonials" data-k="nav_reviews">الآراء</a></li>
+    <li><a href="#articles" data-k="nav_articles">مقالات</a></li>
+    <li><a href="#contact" data-k="nav_contact">اتصل بنا</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('ar')">ع</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    </div>
+    <a href="#booking" class="nav-cta" data-k="nav_cta">احجز موعد</a>
+    <div class="hamburger" onclick="openMob()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div><div class="hero-pattern"></div>
+  <div class="hero-badge" data-k="hero_badge">🏥 عيادة بيطرية متخصصة · تيبازة، الجزائر</div>
+  <h1 class="hero-title" data-k="hero_title">رعاية بيطرية <span>خبيرة</span><br>لحيواناتكم</h1>
+  <p class="hero-subtitle" data-k="hero_sub">نقدم أفضل الخدمات الطبية البيطرية للمزارعين وأصحاب الحيوانات الأليفة في تيبازة والجزائر. صحة حيوانكم، أمانتنا.</p>
+  <div class="hero-actions">
+    <a href="#booking" class="btn-primary" data-k="hero_btn1">احجز موعدك الآن</a>
+    <a href="https://wa.me/213774716118" class="btn-secondary" data-k="hero_btn2">واتساب</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-num">+500</div><div class="hero-stat-label" data-k="stat1">حيوان تمت معالجته</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">+8</div><div class="hero-stat-label" data-k="stat2">سنوات خبرة</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">24/7</div><div class="hero-stat-label" data-k="stat3">متوفر للطوارئ</div></div>
+  </div>
+  <div class="scroll-ind" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">↓</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap reveal">
+      <div class="about-img-frame">🩺</div>
+      <div class="about-deco"></div>
+      <div class="about-badge-card">
+        <div class="icon">🎓</div>
+        <div><strong>Promo 2017</strong><small>معهد العلوم البيطرية</small></div>
+      </div>
+    </div>
+    <div class="about-content reveal">
+      <div class="section-header">
+        <p class="section-label" data-k="about_lbl">من نحن</p>
+        <h2 class="section-title">د. سعيدي <span>شعيب</span></h2>
+        <p class="section-desc" data-k="about_desc">طبيب بيطري متخصص، يقدم خدماته للمزارعين وأصحاب الحيوانات الأليفة في منطقة تيبازة والجزائر. يجمع بين الخبرة العلمية والشغف برعاية الحيوانات، مع التزام كامل بأعلى معايير الرعاية الطبية البيطرية.</p>
+      </div>
+      <div class="about-creds">
+        <h4 data-k="creds_title">📋 المسيرة الأكاديمية</h4>
+        <div class="cred-item"><span class="ci">🏛️</span><span data-k="cred1">دكتور في الطب البيطري — جامعة الإخوة منتوري قسنطينة 1</span></div>
+        <div class="cred-item"><span class="ci">🔬</span><span data-k="cred2">معهد العلوم البيطرية — الخروب، قسنطينة</span></div>
+        <div class="cred-item"><span class="ci">📅</span><span data-k="cred3">خريج دفعة 2017</span></div>
+        <div class="cred-item"><span class="ci">📍</span><span data-k="cred4">يمارس نشاطه في تيبازة، الجزائر</span></div>
+      </div>
+      <div class="about-features">
+        <div class="about-feature">
+          <div class="icon">🎓</div>
+          <div><h4 data-k="f1t">تكوين أكاديمي رفيع المستوى</h4><p data-k="f1d">تخرج من أعرق معاهد الطب البيطري في الجزائر، معهد العلوم البيطرية بالخروب التابع لجامعة الإخوة منتوري قسنطينة.</p></div>
         </div>
-    </nav>
-
-    <!-- قسم الترحيب (Hero Section) -->
-    <section id="home" class="hero-section h-screen flex items-center justify-center text-center text-white pt-16">
-        <div class="max-w-4xl px-4">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6">رعاية بيطرية خبيرة لحيواناتكم</h1>
-            <p class="text-xl md:text-2xl mb-8 opacity-90">نقدم أفضل الخدمات الطبية البيطرية للمزارعين وأصحاب الحيوانات الأليفة في تيبازة والجزائر.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#articles" class="bg-white text-emerald-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">تصفح المقالات</a>
-                <a href="https://wa.me/213774716118" class="bg-emerald-600 text-white px-8 py-3 rounded-full font-bold hover:bg-emerald-700 transition">تواصل معنا</a>
-            </div>
+        <div class="about-feature">
+          <div class="icon">🚜</div>
+          <div><h4 data-k="f2t">خبرة ميدانية واسعة</h4><p data-k="f2d">أكثر من 8 سنوات من الخبرة العملية في مزارع الأغنام، الدواجن، والأبقار، مع زيارات ميدانية منتظمة عبر ولاية تيبازة.</p></div>
         </div>
-    </section>
-
-    <!-- قسم الخدمات (Services) -->
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-4 text-emerald-800">خدماتنا المتميزة</h2>
-            <p class="text-gray-600 mb-12 max-w-2xl mx-auto">نحن هنا لضمان صحة وسلامة حيواناتكم من خلال رعاية طبية متكاملة.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 bg-emerald-50 rounded-2xl border border-emerald-100">
-                    <i class="fas fa-stethoscope text-4xl text-emerald-600 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">الفحص الطبي الشامل</h3>
-                    <p class="text-gray-600">تشخيص دقيق ومتابعة دورية للحالة الصحية للحيوانات.</p>
-                </div>
-                <div class="p-8 bg-emerald-50 rounded-2xl border border-emerald-100">
-                    <i class="fas fa-syringe text-4xl text-emerald-600 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">التلقيح والوقاية</h3>
-                    <p class="text-gray-600">برامج تطعيم وقائية ضد الأمراض المعدية والطفيليات.</p>
-                </div>
-                <div class="p-8 bg-emerald-50 rounded-2xl border border-emerald-100">
-                    <i class="fas fa-tractor text-4xl text-emerald-600 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">زيارات ميدانية للمزارع</h3>
-                    <p class="text-gray-600">نصل إليكم في مزارعكم لتقديم الرعاية اللازمة للمواشي والدواجن.</p>
-                </div>
-            </div>
+        <div class="about-feature">
+          <div class="icon">💉</div>
+          <div><h4 data-k="f3t">وقاية وعلاج متكامل</h4><p data-k="f3d">برامج تطعيم شاملة ومتابعة صحية دورية للقطعان، إضافة إلى علاج الحيوانات الأليفة بأحدث الأساليب الطبية.</p></div>
         </div>
-    </section>
+      </div>
+      <a href="https://wa.me/213774716118" class="btn-primary" data-k="about_cta">تحدث مع الدكتور</a>
+    </div>
+  </div>
+</section>
 
-    <!-- قسم المقالات (Articles) -->
-    <section id="articles" class="py-20 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-4 text-center text-emerald-800">ركن المعرفة البيطرية</h2>
-            <p class="text-gray-600 mb-12 text-center">معلومات علمية موثوقة لمساعدتكم في تربية حيواناتكم.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- مقال الأغنام -->
-                <div class="article-card bg-white p-8 rounded-xl shadow-sm">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-sheep text-3xl text-emerald-600 ml-4"></i>
-                        <h3 class="text-2xl font-bold">تربية الأغنام في الجزائر</h3>
-                    </div>
-                    <p class="text-gray-700 mb-4">لضمان إنتاجية عالية، يجب التركيز على:</p>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>التغذية المتوازنة الغنية بالبروتينات والأملاح المعدنية.</li>
-                        <li>الوقاية من الطفيليات الداخلية والخارجية بشكل دوري.</li>
-                        <li>توفير تهوية جيدة في الحظائر لتجنب الأمراض التنفسية.</li>
-                    </ul>
-                </div>
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header centered reveal">
+    <p class="section-label" data-k="srv_lbl">ما نقدمه</p>
+    <h2 class="section-title" data-k="srv_title">خدماتنا <span>المتميزة</span></h2>
+    <p class="section-desc" data-k="srv_desc">رعاية طبية متكاملة لجميع أنواع الحيوانات، من الفحص الدوري إلى العمليات الجراحية والزيارات الميدانية.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal"><div class="service-icon">🔬</div><h3 data-k="s1t">الفحص الطبي الشامل</h3><p data-k="s1d">تشخيص دقيق ومتابعة دورية بأحدث الأجهزة الطبية لضمان صحة حيواناتكم.</p></div>
+    <div class="service-card reveal"><div class="service-icon">💉</div><h3 data-k="s2t">التلقيح والوقاية</h3><p data-k="s2d">برامج تطعيم وقائية متكاملة ضد الأمراض المعدية والطفيليات الخطيرة.</p></div>
+    <div class="service-card reveal"><div class="service-icon">🚜</div><h3 data-k="s3t">زيارات ميدانية للمزارع</h3><p data-k="s3d">نصل إليكم في مزارعكم لتقديم الرعاية اللازمة للمواشي والدواجن والأبقار.</p></div>
+    <div class="service-card reveal"><div class="service-icon">🐕</div><h3 data-k="s4t">رعاية الحيوانات الأليفة</h3><p data-k="s4d">خدمات متخصصة للقطط والكلاب: تطعيم، علاج، جراحة، ورعاية صحية شاملة.</p></div>
+    <div class="service-card reveal"><div class="service-icon">🧬</div><h3 data-k="s5t">التشخيص المختبري</h3><p data-k="s5d">تحاليل مختبرية متطورة لتشخيص الأمراض بدقة واتخاذ القرار العلاجي الصحيح.</p></div>
+    <div class="service-card reveal"><div class="service-icon">🛡️</div><h3 data-k="s6t">الأمن الحيوي للمزارع</h3><p data-k="s6d">برامج وقائية شاملة لحماية مزرعتكم من الأوبئة والأمراض المعدية الخطيرة.</p></div>
+  </div>
+</section>
 
-                <!-- مقال الدواجن -->
-                <div class="article-card bg-white p-8 rounded-xl shadow-sm">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-feather text-3xl text-emerald-600 ml-4"></i>
-                        <h3 class="text-2xl font-bold">إدارة مزارع الدواجن</h3>
-                    </div>
-                    <p class="text-gray-700 mb-4">أساسيات النجاح في تربية الدواجن:</p>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>الالتزام الصارم ببرنامج التلقيحات (نيوكاسل، غومبورو).</li>
-                        <li>مراقبة جودة المياه والأعلاف يومياً.</li>
-                        <li>الحفاظ على درجة حرارة مستقرة داخل العنبر.</li>
-                    </ul>
-                </div>
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-header centered reveal">
+    <p class="section-label" data-k="gal_lbl">معرض الصور</p>
+    <h2 class="section-title" data-k="gal_title">لحظات من <span>عملنا</span></h2>
+    <p class="section-desc" data-k="gal_desc">صور من عيادتنا وزياراتنا الميدانية وحالات عالجناها بنجاح.</p>
+  </div>
+  <div class="gallery-grid reveal">
+    <div class="gallery-item"><div class="gallery-item-inner">🏥</div><div class="gallery-overlay"><p data-k="g1">العيادة البيطرية — تيبازة</p></div></div>
+    <div class="gallery-item"><div class="gallery-item-inner">🐑</div><div class="gallery-overlay"><p data-k="g2">فحص قطيع الأغنام</p></div></div>
+    <div class="gallery-item"><div class="gallery-item-inner">🐓</div><div class="gallery-overlay"><p data-k="g3">مزرعة الدواجن</p></div></div>
+    <div class="gallery-item"><div class="gallery-item-inner">🐕</div><div class="gallery-overlay"><p data-k="g4">رعاية الكلاب</p></div></div>
+    <div class="gallery-item"><div class="gallery-item-inner">🐄</div><div class="gallery-overlay"><p data-k="g5">فحص الأبقار</p></div></div>
+  </div>
+</section>
 
-                <!-- مقال القطط والكلاب -->
-                <div class="article-card bg-white p-8 rounded-xl shadow-sm">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-cat text-3xl text-emerald-600 ml-4"></i>
-                        <h3 class="text-2xl font-bold">صحة الحيوانات الأليفة</h3>
-                    </div>
-                    <p class="text-gray-700 mb-4">نصائح لأصحاب القطط والكلاب:</p>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>التلقيح ضد داء الكلب (السعار) إلزامي وضروري.</li>
-                        <li>تنظيف الأسنان والأذنين يقي من التهابات خطيرة.</li>
-                        <li>تجنب تقديم الأطعمة المنزلية الغنية بالتوابل والسكريات.</li>
-                    </ul>
-                </div>
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-header centered reveal">
+    <p class="section-label" data-k="rev_lbl">آراء العملاء</p>
+    <h2 class="section-title" data-k="rev_title">ماذا يقول <span>عملاؤنا</span></h2>
+    <p class="section-desc" data-k="rev_desc">تجارب حقيقية من مزارعين وأصحاب حيوانات أليفة ثقوا في خدماتنا.</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text" data-k="t1">"الدكتور سعيدي شعيب طبيب ممتاز، أنقذ قطيعي من مرض خطير بتشخيص سريع ودقيق. أنصح كل مزارع بالتواصل معه."</p><div class="testimonial-author"><div class="testimonial-avatar">👨‍🌾</div><div><strong>محمد بوعلام</strong><small>مزارع أغنام — تيبازة</small></div></div></div>
+    <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text" data-k="t2">"خدمة احترافية ورعاية ممتازة لكلبتي. الدكتور صبور ويعامل الحيوانات بلطف واحترام كبيرين."</p><div class="testimonial-author"><div class="testimonial-avatar">👩</div><div><strong>سارة حمداني</strong><small>صاحبة كلب — الجزائر</small></div></div></div>
+    <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text" data-k="t3">"يزور مزرعتنا بانتظام ويتابع برنامج التلقيح بجدية. بفضله انخفض معدل المرض في دجاجنا بشكل ملحوظ."</p><div class="testimonial-author"><div class="testimonial-avatar">👨</div><div><strong>عبد الرحمن قاسم</strong><small>صاحب مزرعة دواجن</small></div></div></div>
+  </div>
+</section>
 
-                <!-- مقال عام -->
-                <div class="article-card bg-white p-8 rounded-xl shadow-sm">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-microscope text-3xl text-emerald-600 ml-4"></i>
-                        <h3 class="text-2xl font-bold">الأمن الحيوي في المزارع</h3>
-                    </div>
-                    <p class="text-gray-700 mb-4">كيف تحمي مزرعتك من الأوبئة؟</p>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>تقليل دخول الزوار والسيارات الغريبة للمزرعة.</li>
-                        <li>استخدام أحواض التطهير عند مداخل العنابر.</li>
-                        <li>التخلص الصحي من الحيوانات النافقة بعيداً عن القطيع.</li>
-                    </ul>
-                </div>
-            </div>
+<!-- BOOKING -->
+<section id="booking">
+  <div class="section-header reveal">
+    <p class="section-label" data-k="bk_lbl">احجز الآن</p>
+    <h2 class="section-title" data-k="bk_title">حجز <span>موعد</span></h2>
+    <p class="section-desc" data-k="bk_desc">احجز موعدك بسهولة وسنتواصل معك لتأكيد الزيارة في أقرب وقت.</p>
+  </div>
+  <div class="booking-wrap">
+    <div class="reveal">
+      <div class="booking-info-item"><div class="booking-info-icon">📍</div><div><h4 data-k="bi1h">العنوان</h4><p data-k="bi1p">تيبازة، الجزائر</p></div></div>
+      <div class="booking-info-item"><div class="booking-info-icon">📞</div><div><h4 data-k="bi2h">الهاتف</h4><p>+213 774 71 61 18</p></div></div>
+      <div class="booking-info-item"><div class="booking-info-icon">⏰</div><div><h4 data-k="bi3h">ساعات العمل</h4><p data-k="bi3p">السبت – الخميس: 8ص – 7م<br>طوارئ: 24/7</p></div></div>
+      <div class="booking-info-item"><div class="booking-info-icon">📧</div><div><h4 data-k="bi4h">البريد</h4><p>chouaibsaidi753@gmail.com</p></div></div>
+    </div>
+    <div class="booking-form reveal">
+      <h3 data-k="form_title">أرسل طلب الحجز</h3>
+      <div id="formContent">
+        <div class="form-row">
+          <div class="form-group"><label data-k="fn_lbl">الاسم الكامل *</label><input type="text" id="fn" placeholder="أدخل اسمك"></div>
+          <div class="form-group"><label data-k="fp_lbl">رقم الهاتف *</label><input type="tel" id="fp" placeholder="+213..."></div>
         </div>
-    </section>
-
-    <!-- قسم الاتصال (Contact) -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h2 class="text-4xl font-bold mb-6 text-emerald-800">تواصل معنا</h2>
-                    <p class="text-gray-600 mb-8 text-lg">نحن متواجدون لخدمتكم والإجابة على استفساراتكم الطبية.</p>
-                    <div class="space-y-6">
-                        <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-emerald-600 text-2xl ml-4"></i>
-                            <span class="text-lg">تيبازة، الجزائر</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-phone text-emerald-600 text-2xl ml-4"></i>
-                            <span class="text-lg" dir="ltr">+213 774 71 61 18</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-envelope text-emerald-600 text-2xl ml-4"></i>
-                            <span class="text-lg">chouaibsaidi753@gmail.com</span>
-                        </div>
-                        <div class="mt-8">
-                            <a href="https://wa.me/213774716118" class="inline-flex items-center bg-green-500 text-white px-8 py-3 rounded-full font-bold hover:bg-green-600 transition">
-                                <i class="fab fa-whatsapp ml-2 text-xl"></i>
-                                راسلنا عبر واتساب
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-emerald-50 p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold mb-6 text-emerald-800 text-center">أرسل لنا رسالة</h3>
-                    <form class="space-y-4">
-                        <input type="text" placeholder="الاسم الكامل" class="w-full p-4 rounded-lg border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-500">
-                        <input type="email" placeholder="البريد الإلكتروني" class="w-full p-4 rounded-lg border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-500">
-                        <textarea placeholder="كيف يمكننا مساعدتك؟" rows="4" class="w-full p-4 rounded-lg border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
-                        <button class="w-full bg-emerald-600 text-white font-bold py-4 rounded-lg hover:bg-emerald-700 transition">إرسال</button>
-                    </form>
-                </div>
-            </div>
+        <div class="form-row">
+          <div class="form-group"><label data-k="fa_lbl">نوع الحيوان *</label>
+            <select id="fa"><option value="">-- اختر --</option><option value="sheep" data-k="f_sheep">أغنام</option><option value="poultry" data-k="f_poultry">دواجن</option><option value="cattle" data-k="f_cattle">أبقار</option><option value="dog" data-k="f_dog">كلب</option><option value="cat" data-k="f_cat">قط</option><option value="other" data-k="f_other">أخرى</option></select>
+          </div>
+          <div class="form-group"><label data-k="fs_lbl">نوع الخدمة</label>
+            <select id="fs"><option value="">-- اختر --</option><option value="exam" data-k="fs_exam">فحص طبي</option><option value="vac" data-k="fs_vac">تلقيح</option><option value="farm" data-k="fs_farm">زيارة مزرعة</option><option value="emrg" data-k="fs_emrg">طوارئ</option></select>
+          </div>
         </div>
-    </section>
+        <div class="form-group"><label data-k="fd_lbl">التاريخ المفضل</label><input type="date" id="fd"></div>
+        <div class="form-group"><label data-k="fm_lbl">وصف الحالة</label><textarea id="fm" placeholder="اشرح الحالة أو طلبك باختصار..."></textarea></div>
+        <button class="btn-book" onclick="submitForm()" data-k="f_submit">إرسال طلب الحجز</button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="check">✅</div>
+        <h4 data-k="ok_title">تم استلام طلبك!</h4>
+        <p data-k="ok_msg">سنتواصل معك في أقرب وقت لتأكيد الموعد.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer class="bg-emerald-900 text-white py-12 text-center">
-        <div class="max-w-7xl mx-auto px-4">
-            <p class="text-xl font-bold mb-4">VetCareDZ</p>
-            <p class="opacity-70">&copy; 2024 جميع الحقوق محفوظة للدكتور سعيدي.</p>
-        </div>
-    </footer>
+<!-- LEGAL DISCLAIMER -->
+<section id="articles">
+  <div class="section-header centered reveal">
+    <p class="section-label" data-k="art_lbl">ركن المعرفة البيطرية</p>
+    <h2 class="section-title" data-k="art_title">مقالات <span>علمية موثوقة</span></h2>
+    <p class="section-desc" data-k="art_desc">معلومات بيطرية شاملة محلية وعالمية، بقلم الدكتور سعيدي شعيب — خريج معهد العلوم البيطرية الخروب، جامعة منتوري قسنطينة 1، دفعة 2017.</p>
+  </div>
 
+  <div class="legal-notice reveal">
+    <div class="legal-notice-icon">⚖️</div>
+    <div style="flex:1">
+      <strong class="legal-notice-title">إشعار قانوني — المحتوى للتوعية فقط</strong>
+      <p class="legal-notice-text">
+        جميع المقالات أدناه هي محتوى توعوي وتثقيفي بيطري <strong>لا تُغني عن الاستشارة البيطرية المتخصصة</strong>.
+        وفقاً للقانون الجزائري، يُحظر وصف الأدوية البيطرية أو الإعلان عنها أو تداولها خارج إطار الوصفة الطبية البيطرية الصادرة من طبيب بيطري مرخَّص.
+        لذلك لا تتضمن هذه المقالات أسماء أدوية أو جرعات — <strong>اتصل بالدكتور سعيدي شعيب للحصول على التشخيص والعلاج الصحيح.</strong>
+      </p>
+      <div class="legal-laws">
+        <span class="legal-law-badge">📜 القانون 88-08 — 26 يناير 1988</span>
+        <span class="legal-law-badge">📜 القانون 19-03 — 17 يوليو 2019 (تعديل)</span>
+        <span class="legal-law-badge">📜 المواد 42–43 : حظر الإشهار الدوائي</span>
+        <span class="legal-law-badge">📜 المرسوم التنفيذي 90/240</span>
+      </div>
+    </div>
+  </div>
+  <div class="articles-grid" id="articlesGrid">
+    <!-- Cards injected by JS -->
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header centered reveal">
+    <p class="section-label" data-k="ct_lbl">تواصل معنا</p>
+    <h2 class="section-title" data-k="ct_title">نحن هنا <span>لخدمتكم</span></h2>
+    <p class="section-desc" data-k="ct_desc">متواجدون لخدمتكم والإجابة على استفساراتكم الطبية في أي وقت.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="contact-items">
+        <div class="contact-item"><div class="contact-item-icon">📍</div><div><strong data-k="ci1l">الموقع</strong><p data-k="ci1p">تيبازة، الجزائر</p></div></div>
+        <div class="contact-item"><div class="contact-item-icon">📞</div><div><strong data-k="ci2l">الهاتف</strong><a href="tel:+213774716118">+213 774 71 61 18</a></div></div>
+        <div class="contact-item"><div class="contact-item-icon">📧</div><div><strong data-k="ci3l">البريد</strong><a href="mailto:chouaibsaidi753@gmail.com">chouaibsaidi753@gmail.com</a></div></div>
+        <div class="contact-item"><div class="contact-item-icon">⏰</div><div><strong data-k="ci4l">ساعات العمل</strong><p data-k="ci4p">السبت – الخميس: 8ص – 7م</p></div></div>
+      </div>
+      <div class="social-links">
+        <a href="https://wa.me/213774716118" class="social-link">💬 <span data-k="soc_wa">واتساب</span></a>
+        <a href="#" class="social-link">📘 <span data-k="soc_fb">فيسبوك</span></a>
+        <a href="#" class="social-link">📸 <span data-k="soc_ig">إنستغرام</span></a>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <div class="map-icon">🗺️</div>
+      <p data-k="map_loc">تيبازة، الجزائر</p>
+      <a href="https://maps.google.com/?q=Tipaza,Algeria" target="_blank">📍 <span data-k="map_btn">فتح في خرائط جوجل</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Vet<span>Care</span>DZ</div>
+  <p data-k="ft_sub">عيادة الدكتور سعيدي شعيب للطب البيطري</p>
+  <p style="font-size:.78rem;color:rgba(255,255,255,.3);margin-top:4px" data-k="ft_cred">خريج معهد العلوم البيطرية الخروب — جامعة منتوري قسنطينة 1 — دفعة 2017</p>
+  <div class="footer-links">
+    <a href="#home" data-k="nav_home">الرئيسية</a>
+    <a href="#about" data-k="nav_about">الطبيب</a>
+    <a href="#services" data-k="nav_services">الخدمات</a>
+    <a href="#articles" data-k="nav_articles">مقالات</a>
+    <a href="#booking" data-k="nav_booking">حجز موعد</a>
+    <a href="#contact" data-k="nav_contact">اتصل بنا</a>
+  </div>
+  <div class="footer-divider"></div>
+  <p data-k="ft_copy">© 2024 جميع الحقوق محفوظة — VetCareDZ | د. سعيدي شعيب</p>
+</footer>
+
+<a href="https://wa.me/213774716118" class="whatsapp-fab" target="_blank" title="WhatsApp">💬</a>
+
+<!-- ARTICLE MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════
+   ARTICLES DATA
+═══════════════════════════════════════ */
+const ARTICLES = [
+  {
+    id:1, emoji:'🐑',
+    tagClass:'tag-livestock', tagAr:'مواشي', tagEn:'Livestock', tagFr:'Élevage',
+    gradient:'linear-gradient(135deg,#2d6a4f,#1a3d2b)',
+    titleAr:'أمراض الأغنام الشائعة في الجزائر — الأعراض والعلاج',
+    titleEn:'Common Sheep Diseases in Algeria — Symptoms & Treatment',
+    titleFr:'Maladies courantes des ovins en Algérie — Symptômes et traitement',
+    summaryAr:'دليل شامل لأخطر الأمراض التي تهدد قطعان الأغنام في الجزائر مع طرق التشخيص والعلاج والوقاية.',
+    summaryEn:'A comprehensive guide to the most dangerous diseases threatening sheep flocks in Algeria, with diagnosis, treatment and prevention methods.',
+    summaryFr:'Guide complet sur les maladies les plus dangereuses menaçant les troupeaux ovins en Algérie.',
+    contentAr:`
+      <p>تُعدّ الأغنام من أهم الثروات الحيوانية في الجزائر، إذ تُمثّل ركيزة أساسية للاقتصاد الريفي خاصة في المناطق الشمالية كتيبازة والبليدة. ولحماية هذه الثروة، لا بدّ من معرفة أبرز الأمراض التي تهدّدها.</p>
+      <h4>1. الجمرة الخبيثة (Anthrax)</h4>
+      <p>مرض بكتيري فتّاك تسببه بكتيريا <em>Bacillus anthracis</em>. ينتشر في المناطق الرطبة ويُصيب الأغنام والأبقار والإنسان.</p>
+      <div class="highlight-box"><strong>⚠️ الأعراض الرئيسية:</strong>ارتفاع حادّ في الحرارة، توقف مفاجئ عن الرعي، نزيف من الفتحات الطبيعية، نفوق مفاجئ في غضون ساعات.</div>
+      <ul><li>العلاج: تدخل بيطري عاجل فوري — يُحدد الطبيب البيطري المرخص نوع العلاج وجرعته حسب الحالة.</li><li>الوقاية: تلقيح سنوي إلزامي قبل موسم الأمطار.</li></ul>
+      <h4>2. الحمى القلاعية (FMD)</h4>
+      <p>مرض فيروسي شديد العدوى يصيب جميع الحيوانات ذات الظلف المشقوق ويُسبّب خسائر اقتصادية هائلة.</p>
+      <div class="highlight-box"><strong>🔍 الأعراض:</strong>تقرحات في الفم واللسان والأقدام، عرج شديد، امتناع عن الأكل، ارتفاع حرارة.</div>
+      <ul><li>العلاج: لا يوجد علاج محدد، علاج داعم لتقليل الأعراض.</li><li>الوقاية: تلقيح دوري كل 6 أشهر ابتداءً من عمر 3 أشهر.</li></ul>
+      <h4>3. جدري الأغنام (Sheep Pox)</h4>
+      <p>مرض فيروسي يصيب الأغنام الصغيرة الأكثر حساسية، ويتميز بظهور طفح جلدي واسع.</p>
+      <ul><li>الأعراض: حبوب وتقرحات جلدية، إفرازات من الأنف والعينين، ضعف عام.</li><li>الوقاية: تلقيح سنوي، عزل الحيوانات الجديدة لمدة 21 يوماً قبل إدخالها للقطيع.</li></ul>
+      <h4>4. الالتهاب الرئوي (Pneumonia)</h4>
+      <p>أحد أكثر أسباب النفوق في المواشي بالجزائر، خاصة في الشتاء وعند تغيّر الطقس.</p>
+      <div class="highlight-box"><strong>💊 العلاج:</strong>يستلزم تدخل الطبيب البيطري المرخص الذي يُقيّم الحالة ويُحدد البروتوكول العلاجي المناسب. ضرورة إبعاد الحيوانات عن التيارات الهوائية الباردة فوراً.</div>
+      <div class="warning-box"><strong>🚨 تنبيه:</strong>لا تؤخر الاستشارة البيطرية — التدخل المبكر يُنقذ القطيع.</div>
+      <h4>5. داء الكلوستريديا (Clostridial Diseases)</h4>
+      <p>مجموعة أمراض بكتيرية خطيرة تشمل التسمم المعوي (Pulpy Kidney)، الغنغرينا الغازية، والتيتانوس.</p>
+      <table><tr><th>المرض</th><th>المسبب</th><th>التطعيم</th></tr>
+      <tr><td>التسمم المعوي</td><td>Cl. perfringens</td><td>قبل الولادة بشهر</td></tr>
+      <tr><td>التيتانوس</td><td>Cl. tetani</td><td>عند الجرح أو الولادة</td></tr>
+      <tr><td>الغنغرينا</td><td>Cl. chauvoei</td><td>سنوياً</td></tr></table>
+      <div class="source">📚 المصادر: معهد باستور الجزائر، منظمة الصحة الحيوانية العالمية (WOAH)، تجربة ميدانية د. سعيدي شعيب — تيبازة.</div>
+    `
+  },
+  {
+    id:2, emoji:'🐓',
+    tagClass:'tag-poultry', tagAr:'دواجن', tagEn:'Poultry', tagFr:'Volailles',
+    gradient:'linear-gradient(135deg,#c9a84c,#a0762a)',
+    titleAr:'إدارة صحة مزارع الدواجن — دليل عملي شامل',
+    titleEn:'Poultry Farm Health Management — Practical Guide',
+    titleFr:'Gestion sanitaire des élevages avicoles — Guide pratique',
+    summaryAr:'كل ما يحتاجه صاحب مزرعة الدواجن من برامج التطعيم إلى إدارة الأمراض وضمان الإنتاجية.',
+    summaryEn:'Everything a poultry farm owner needs from vaccination programs to disease management and productivity.',
+    summaryFr:'Tout ce dont le propriétaire d\'élevage avicole a besoin, de la vaccination à la gestion des maladies.',
+    contentAr:`
+      <p>يُعدّ قطاع الدواجن من أهم القطاعات الزراعية في الجزائر. ونجاح المزرعة يعتمد بشكل كبير على البرنامج الصحي المتكامل الذي يشمل التلقيح، التغذية، والبيوسيكيوريتي.</p>
+      <h4>برنامج التلقيح الأساسي للدجاج</h4>
+      <table>
+        <tr><th>العمر</th><th>اللقاح</th><th>طريقة التطبيق</th></tr>
+        <tr><td>اليوم الأول</td><td>نيوكاسل (HB1)</td><td>قطرة عين / أنف</td></tr>
+        <tr><td>7 أيام</td><td>غومبورو (IBD)</td><td>ماء الشرب</td></tr>
+        <tr><td>14 يوم</td><td>غومبورو (جرعة 2)</td><td>ماء الشرب</td></tr>
+        <tr><td>21 يوم</td><td>نيوكاسل (La Sota)</td><td>رذاذ / ماء</td></tr>
+        <tr><td>28 يوم</td><td>التهاب القصبات (IB)</td><td>رذاذ</td></tr>
+        <tr><td>35 يوم</td><td>نيوكاسل معزّز</td><td>حقن عضلي</td></tr>
+      </table>
+      <h4>مرض نيوكاسل (Newcastle Disease)</h4>
+      <p>أخطر أمراض الدواجن وأكثرها انتشاراً في الجزائر. يتسبب في خسائر تصل إلى 100% من القطيع إذا لم يُحصَّن مسبقاً.</p>
+      <div class="highlight-box"><strong>📋 الأعراض:</strong>أعراض عصبية (لف الرقبة، الشلل)، أعراض تنفسية، انخفاض حاد في إنتاج البيض، إسهال مائي أخضر اللون.</div>
+      <div class="warning-box"><strong>🚨 لا علاج لهذا المرض — الوقاية بالتلقيح هي الحل الوحيد.</strong></div>
+      <h4>مرض غومبورو (Gumboro / IBD)</h4>
+      <p>يصيب الجهاز المناعي للكتاكيت في الفترة 2-6 أسابيع، ويُدمّر جراب فابريسيوس مما يجعل الطائر عاجزاً عن بناء مناعة.</p>
+      <ul><li>الأعراض: اكتئاب، إسهال، ترنح، ريش منتفش، معدل نفوق مرتفع.</li><li>الوقاية: التلقيح المبكر وعدم المجامعة بين قطعان مختلفة الأعمار.</li></ul>
+      <h4>إدارة الحرارة والتهوية</h4>
+      <div class="highlight-box"><strong>🌡️ درجات الحرارة المثالية:</strong><br>الأسبوع 1: 33–35°م | الأسبوع 2: 30–32°م | الأسبوع 3: 27–29°م | ما بعد: 22–25°م</div>
+      <ul><li>ضمان تجديد الهواء دون تيارات مباشرة على الكتاكيت.</li><li>مراقبة مؤشر الرطوبة: يجب أن تكون بين 50-70%.</li><li>الفرشة الجافة تقي من الكوكسيديا والأمراض التنفسية.</li></ul>
+      <div class="source">📚 المصادر: منظمة الفاو (FAO)، المعهد الوطني البيطري بالجزائر (INFV)، تجربة ميدانية د. سعيدي شعيب.</div>
+    `
+  },
+  {
+    id:3, emoji:'🐕',
+    tagClass:'tag-pets', tagAr:'حيوانات أليفة', tagEn:'Pets', tagFr:'Animaux de compagnie',
+    gradient:'linear-gradient(135deg,#2471a3,#1a5276)',
+    titleAr:'صحة الكلاب والقطط — دليل المالك الجزائري',
+    titleEn:'Dogs & Cats Health — The Algerian Owner\'s Guide',
+    titleFr:'Santé chiens et chats — Guide du propriétaire algérien',
+    summaryAr:'كل ما يجب معرفته عن تطعيم وعلاج ورعاية الكلاب والقطط في الجزائر، مع التركيز على الأمراض المحلية.',
+    summaryEn:'Everything you need to know about vaccinating, treating and caring for dogs and cats in Algeria.',
+    summaryFr:'Tout sur la vaccination, le traitement et les soins des chiens et chats en Algérie.',
+    contentAr:`
+      <p>ازداد عدد أصحاب الحيوانات الأليفة في الجزائر بشكل ملحوظ خلال السنوات الأخيرة. ولضمان صحة كلبك أو قطتك، إليك الدليل الشامل.</p>
+      <h4>برنامج تطعيم الكلاب</h4>
+      <table>
+        <tr><th>العمر</th><th>التطعيم</th></tr>
+        <tr><td>6-8 أسابيع</td><td>سداسي (Dhppi) + بارفو</td></tr>
+        <tr><td>10-12 أسبوع</td><td>سداسي + ليبتوسبيرا + كورونا</td></tr>
+        <tr><td>14-16 أسبوع</td><td>سداسي + داء الكلب (إلزامي قانوناً)</td></tr>
+        <tr><td>سنوياً</td><td>تجديد كامل + داء الكلب</td></tr>
+      </table>
+      <h4>داء الكلب (السعار) — إلزامي قانوناً في الجزائر</h4>
+      <div class="warning-box"><strong>⚠️ خطير جداً:</strong>داء الكلب مرض فيروسي مميت للإنسان والحيوان ولا علاج له بعد ظهور الأعراض. التطعيم السنوي إلزامي بموجب القانون الجزائري.</div>
+      <h4>برنامج تطعيم القطط</h4>
+      <ul>
+        <li>8 أسابيع: ثلاثي (Rhinotrachéite + Calicivirus + Panleucopénie)</li>
+        <li>12 أسبوع: تعزيز الثلاثي + داء الكلب</li>
+        <li>سنوياً: تجديد كامل</li>
+      </ul>
+      <h4>الطفيليات الخارجية والداخلية</h4>
+      <div class="highlight-box"><strong>📅 برنامج مكافحة الطفيليات:</strong><br>• مضاد طفيليات داخلية كل 3 أشهر (ديدان، كوكسيديا).<br>• ضد البراغيث والقراد: شهرياً خاصة في الصيف.<br>• الدودة الشريطية: تُعالج مع الطفيليات الداخلية.</div>
+      <h4>التعقيم — فوائده وأهميته</h4>
+      <ul>
+        <li>يُقلّل خطر سرطان الخصيتين والمبايض بنسبة 90%.</li>
+        <li>يُخفف العدوانية وعادة الضياع عند الذكور.</li>
+        <li>يُطيل متوسط عمر الحيوان.</li>
+        <li>يُساهم في الحدّ من التكاثر العشوائي وحماية حيوانات الشارع.</li>
+      </ul>
+      <div class="source">📚 المصادر: الاتحاد الأوروبي للطب البيطري (WSAVA)، الجمعية البيطرية الجزائرية، د. سعيدي شعيب.</div>
+    `
+  },
+  {
+    id:4, emoji:'🛡️',
+    tagClass:'tag-bio', tagAr:'أمن حيوي', tagEn:'Biosecurity', tagFr:'Biosécurité',
+    gradient:'linear-gradient(135deg,#1a3d2b,#0f2419)',
+    titleAr:'البيوسيكيوريتي في المزارع — حماية شاملة من الأوبئة',
+    titleEn:'Farm Biosecurity — Comprehensive Epidemic Protection',
+    titleFr:'Biosécurité en élevage — Protection complète contre les épidémies',
+    summaryAr:'إجراءات الأمن الحيوي المتكاملة لحماية مزرعتك من الأمراض المعدية الخطيرة وتجنّب الخسائر الاقتصادية.',
+    summaryEn:'Integrated biosecurity procedures to protect your farm from serious infectious diseases.',
+    summaryFr:'Procédures de biosécurité pour protéger votre ferme des maladies infectieuses graves.',
+    contentAr:`
+      <p>البيوسيكيوريتي (الأمن الحيوي) هو مجموعة من الإجراءات الوقائية التي تهدف إلى منع دخول الأمراض المعدية إلى المزرعة أو الحدّ من انتشارها داخلها.</p>
+      <h4>المستويات الثلاثة للأمن الحيوي</h4>
+      <div class="highlight-box"><strong>🔒 1. الأمن الحيوي الهيكلي:</strong><br>تصميم المزرعة بحيث يُقلّل خطر التلوث: أسوار مناسبة، ممرات محددة للمركبات والعمال، مداخل تطهير، مناطق نظيفة وملوثة منفصلة.</div>
+      <div class="highlight-box"><strong>🧪 2. الأمن الحيوي التشغيلي:</strong><br>إجراءات يومية: غسيل الأيدي، تغيير الملابس، تعقيم المعدات، التخلص الصحي من النفايات الحيوانية.</div>
+      <div class="highlight-box"><strong>📋 3. الأمن الحيوي الإداري:</strong><br>سجلات صحية دقيقة، برامج تلقيح موثقة، تتبع الحركة الحيوانية، تحديد مصادر الأعلاف والمياه.</div>
+      <h4>إجراءات الحجر الصحي للحيوانات الجديدة</h4>
+      <ul>
+        <li>عزل الحيوانات الجديدة لمدة <strong>21 إلى 30 يوماً</strong> قبل إدخالها للقطيع.</li>
+        <li>فحص بيطري كامل خلال فترة العزل.</li>
+        <li>تطعيمات وعلاج طفيليات قبل الإدخال.</li>
+        <li>مراقبة يومية للأعراض المرضية.</li>
+      </ul>
+      <h4>أحواض التطهير — كيف تُستخدم؟</h4>
+      <table>
+        <tr><th>المادة</th><th>التركيز</th><th>الاستخدام</th></tr>
+        <tr><td>كلور الصوديوم</td><td>2-5%</td><td>أرضيات وجدران</td></tr>
+        <tr><td>فورمالين</td><td>1-2%</td><td>أدوات ومعدات</td></tr>
+        <tr><td>هيدروكسيد الصوديوم</td><td>2%</td><td>مداخل المزرعة</td></tr>
+        <tr><td>اليود</td><td>0.5%</td><td>الجروح والسرة</td></tr>
+      </table>
+      <h4>التعامل مع حالة نفوق</h4>
+      <div class="warning-box"><strong>🚨 ممنوع:</strong>إلقاء النافق بالقرب من القطيع أو مصادر المياه — ينتشر المرض فوراً. الطريقة الصحيحة: الدفن العميق (+1 متر) مع الجير الحيّ، أو إبلاغ الطبيب البيطري للتخلص الصحي.</div>
+      <div class="source">📚 المصادر: منظمة الصحة الحيوانية العالمية WOAH، وزارة الفلاحة الجزائرية، د. سعيدي شعيب.</div>
+    `
+  },
+  {
+    id:5, emoji:'🐄',
+    tagClass:'tag-cattle', tagAr:'أبقار', tagEn:'Cattle', tagFr:'Bovins',
+    gradient:'linear-gradient(135deg,#922b21,#5b0000)',
+    titleAr:'صحة الأبقار — إدارة القطيع وأبرز الأمراض في الجزائر',
+    titleEn:'Cattle Health — Herd Management and Key Diseases in Algeria',
+    titleFr:'Santé bovine — Gestion du troupeau et maladies clés en Algérie',
+    summaryAr:'دليل شامل لإدارة صحة الأبقار في الجزائر، من التغذية والتكاثر إلى أخطر الأمراض وطرق الوقاية.',
+    summaryEn:'Complete guide to cattle health management in Algeria, from nutrition and reproduction to major diseases.',
+    summaryFr:'Guide complet de gestion de la santé bovine en Algérie.',
+    contentAr:`
+      <p>قطاع تربية الأبقار في الجزائر في توسع مستمر، والإدارة الصحية الجيدة هي العامل الأهم في ضمان الربحية والإنتاجية العالية.</p>
+      <h4>البروسيلا (Brucellosis) — الحمى المالطية</h4>
+      <p>مرض بكتيري خطير يصيب الأبقار والأغنام والإنسان، ويُعدّ من أبرز التحديات البيطرية في الجزائر.</p>
+      <div class="warning-box"><strong>⚠️ خطر على الإنسان:</strong>البروسيلا مرض مشترك بين الإنسان والحيوان. يُصيب المزارعين وصانعي الجبن والأطباء البيطريين عبر التماس مع الحيوان أو منتجاته النيئة.</div>
+      <ul>
+        <li>الأعراض عند الأبقار: إجهاض في الثلث الأخير، التهاب الخصيتين عند الذكور، انخفاض الإنتاج.</li>
+        <li>التشخيص: اختبار الحلقة في الحليب، اختبار Rosa Bengal عند الدم.</li>
+        <li>الوقاية: تلقيح العجلات بلقاح RB51 بين 3-8 أشهر.</li>
+      </ul>
+      <h4>الحمى القلاعية عند الأبقار</h4>
+      <div class="highlight-box"><strong>📋 البرنامج الجزائري:</strong>تلقيح إلزامي مرتين في السنة بالأنواع المتداولة محلياً (O, A, SAT).</div>
+      <h4>مرض الجنون البقري (BSE) والوقاية منه</h4>
+      <ul>
+        <li>تجنّب تغذية الأبقار على مسحوق العظام واللحوم (محظور في الجزائر).</li>
+        <li>الإبلاغ الفوري عن أي أعراض عصبية غير مفسرة.</li>
+      </ul>
+      <h4>إدارة الولادة ورعاية العجول</h4>
+      <ul>
+        <li>تطهير السرة فوراً بالبيتادين بعد الولادة لمنع التهاب السرة.</li>
+        <li>تقديم اللبأ (الكولوستروم) في أول ساعتين من الولادة — ضروري للمناعة الأولية.</li>
+        <li>فصل العجل عن الأم بعد 24 ساعة في المزارع الكبيرة لمنع انتقال الأمراض.</li>
+      </ul>
+      <table>
+        <tr><th>العمر</th><th>التطعيم</th></tr>
+        <tr><td>2-3 أشهر</td><td>البروسيلا (RB51) للإناث</td></tr>
+        <tr><td>4-6 أشهر</td><td>الحمى القلاعية (الجرعة الأولى)</td></tr>
+        <tr><td>6 أشهر</td><td>الحمى القلاعية (التعزيز)</td></tr>
+        <tr><td>سنوياً</td><td>تجديد كامل + طفيليات</td></tr>
+      </table>
+      <div class="source">📚 المصادر: المعهد التقني لتربية الحيوانات ITELV الجزائر، WOAH، تجربة د. سعيدي شعيب.</div>
+    `
+  },
+  {
+    id:6, emoji:'🌿',
+    tagClass:'tag-nutrition', tagAr:'تغذية', tagEn:'Nutrition', tagFr:'Nutrition',
+    gradient:'linear-gradient(135deg,#52b788,#2d6a4f)',
+    titleAr:'تغذية الحيوانات — أسرار الإنتاجية العالية',
+    titleEn:'Animal Nutrition — Secrets of High Productivity',
+    titleFr:'Nutrition animale — Secrets de haute productivité',
+    summaryAr:'فهم الاحتياجات الغذائية للمواشي والدواجن والحيوانات الأليفة وكيفية توفير علف متوازن يزيد الإنتاجية ويقلل الأمراض.',
+    summaryEn:'Understanding the nutritional needs of livestock, poultry and pets for balanced feeding and high productivity.',
+    summaryFr:'Comprendre les besoins nutritionnels du bétail, des volailles et des animaux de compagnie.',
+    contentAr:`
+      <p>التغذية السليمة هي الأساس الأول للصحة الحيوانية. كثير من الأمراض التي تبدو معدية في حقيقتها نتيجة نقص تغذوي مزمن أضعف المناعة.</p>
+      <h4>الاحتياجات الغذائية للأغنام</h4>
+      <table>
+        <tr><th>العنصر</th><th>المصدر</th><th>نقص يؤدي إلى</th></tr>
+        <tr><td>البروتين</td><td>كسب الصويا، البقوليات</td><td>هزال، ضعف نمو الصوف</td></tr>
+        <tr><td>النحاس</td><td>الأتربة الغنية، المكملات</td><td>فقر دم، ضعف الجهاز العصبي</td></tr>
+        <tr><td>الكالسيوم</td><td>الجير، القش</td><td>تليّن العظام عند الحوامل</td></tr>
+        <tr><td>الفيتامين E + السيلينيوم</td><td>مكملات معدنية</td><td>ضعف العضلات (White Muscle Disease)</td></tr>
+      </table>
+      <div class="warning-box"><strong>⚠️ خطر شائع في الجزائر:</strong>نقص النحاس في الأراضي الطينية يُسبّب "مرض التثاقل" عند الخرفان — يتحسن فورياً بحقن النحاس.</div>
+      <h4>تغذية الدواجن</h4>
+      <ul>
+        <li>كتاكيت (0-21 يوم): 22-23% بروتين، طاقة 3000 كيلوكالوري/كغ.</li>
+        <li>تسمين (21-45 يوم): 19-20% بروتين، طاقة 3100 كيلوكالوري/كغ.</li>
+        <li>إنهاء (45+ يوم): 17-18% بروتين، تخفيض المضادات الحيوية.</li>
+      </ul>
+      <div class="highlight-box"><strong>💧 جودة المياه:</strong>فحص المياه دورياً — المياه الملوثة بالبكتيريا أو الطحالب تُقلّل التحصيل الغذائي بـ30% وتنشر الأمراض في العنبر.</div>
+      <h4>تغذية الكلاب والقطط</h4>
+      <ul>
+        <li>تجنّب البصل والثوم والشوكولاتة والعنب — سامة للكلاب والقطط.</li>
+        <li>القطط تحتاج تورين (Taurine) لصحة القلب والعينين — يُفضّل الغذاء الجاهز المتخصص.</li>
+        <li>الكلاب الكبيرة عرضة للمفاصل — مكملات الجلوكوزامين مفيدة من عمر 5 سنوات.</li>
+      </ul>
+      <div class="source">📚 المصادر: معهد الغذاء الحيواني الجزائري، INRA فرنسا، WSAVA.</div>
+    `
+  },
+  {
+    id:7, emoji:'🦟',
+    tagClass:'tag-parasites', tagAr:'طفيليات', tagEn:'Parasites', tagFr:'Parasites',
+    gradient:'linear-gradient(135deg,#7b4213,#4a2600)',
+    titleAr:'الطفيليات الداخلية والخارجية — التشخيص والمكافحة',
+    titleEn:'Internal & External Parasites — Diagnosis & Control',
+    titleFr:'Parasites internes et externes — Diagnostic et lutte',
+    summaryAr:'دليل متكامل لمكافحة الطفيليات في المواشي والدواجن والحيوانات الأليفة، مع البروتوكولات العلاجية المعتمدة.',
+    summaryEn:'Complete guide to parasite control in livestock, poultry and pets with approved treatment protocols.',
+    summaryFr:'Guide complet de lutte antiparasitaire chez le bétail, les volailles et les animaux de compagnie.',
+    contentAr:`
+      <p>تُعدّ الطفيليات من أبرز أسباب الخسائر الاقتصادية في المزارع الجزائرية. دراسة أجراها المعهد الوطني البيطري أظهرت أن أكثر من 70% من الأغنام المفحوصة تحمل طفيليات داخلية.</p>
+      <h4>الطفيليات الداخلية (الديدان)</h4>
+      <table>
+        <tr><th>نوع الدودة</th><th>الحيوان المستضيف</th><th>الأعراض</th></tr>
+        <tr><td>Haemonchus contortus</td><td>الأغنام</td><td>فقر دم حاد، وذمة تحت الفك</td></tr>
+        <tr><td>Fasciola hepatica</td><td>الأغنام والأبقار</td><td>هزال، اصفرار، موت مفاجئ</td></tr>
+        <tr><td>Toxocara</td><td>الكلاب والقطط</td><td>تضخم بطن، إسهال، سعال</td></tr>
+        <tr><td>Eimeria</td><td>الدواجن (كوكسيديا)</td><td>إسهال دموي، نفوق كتاكيت</td></tr>
+      </table>
+      <h4>بروتوكول المكافحة في الأغنام</h4>
+      <div class="highlight-box"><strong>📅 التوقيت الأمثل في الجزائر:</strong><br>• مارس (قبل التوليد): علاج مضاد للطفيليات يصفه الطبيب البيطري.<br>• أكتوبر (بعد الصيف): تكرار العلاج + مكملات معدنية (نحاس + سيلينيوم) بوصفة بيطرية.<br>• عند دخول حيوانات جديدة: علاج فوري قبل الإدخال للقطيع.</div>
+      <h4>الطفيليات الخارجية</h4>
+      <ul>
+        <li><strong>القراد:</strong>ينقل الحمى القلاعية والبابيزيا — مكافحته بالمبيدات الرش كل 2-4 أسابيع في الصيف.</li>
+        <li><strong>الجرب (Gale):</strong>يسبب حكة شديدة وتساقط الصوف والجلد — يُعالج بالإيفرمكتين أو أمبوسيد.</li>
+        <li><strong>البراغيث والقمل:</strong>عند الحيوانات الأليفة — يُعالج بمبيدات حشرية بيطرية مرخصة يصفها الطبيب البيطري.</li>
+      </ul>
+      <h4>الكوكسيديا في الدواجن</h4>
+      <div class="warning-box"><strong>🔴 خسائر فادحة:</strong>الكوكسيديا تُعدّ المسبب الأول لنفوق الكتاكيت في الجزائر بين عمر 3-6 أسابيع.</div>
+      <ul>
+        <li>الوقاية: إضافة كوكسيديوستات في العليقة، فرشة جافة دائماً.</li>
+        <li>العلاج: علاج مضاد للكوكسيديا تحت إشراف الطبيب البيطري لمدة يحددها.</li>
+      </ul>
+      <div class="source">📚 المصادر: المعهد الوطني البيطري الجزائري، Parasitology Reviews، د. سعيدي شعيب.</div>
+    `
+  },
+  {
+    id:8, emoji:'🚨',
+    tagClass:'tag-emergency', tagAr:'طوارئ', tagEn:'Emergency', tagFr:'Urgences',
+    gradient:'linear-gradient(135deg,#c0392b,#7b241c)',
+    titleAr:'حالات الطوارئ البيطرية — كيف تتصرف قبل وصول الطبيب',
+    titleEn:'Veterinary Emergencies — What to Do Before the Vet Arrives',
+    titleFr:'Urgences vétérinaires — Que faire avant l\'arrivée du vétérinaire',
+    summaryAr:'دليل إسعافات أولية بيطرية للمزارعين وأصحاب الحيوانات الأليفة للتعامل مع الحالات الطارئة بشكل صحيح.',
+    summaryEn:'First aid veterinary guide for farmers and pet owners to handle emergencies correctly.',
+    summaryFr:'Guide de premiers soins vétérinaires pour les éleveurs et propriétaires d\'animaux.',
+    contentAr:`
+      <p>في انتظار وصول الطبيب البيطري، التصرف الصحيح في الدقائق الأولى قد يُنقذ حياة حيوانك. هذا الدليل يُعلّمك ما يجب فعله وما يجب تجنّبه.</p>
+      <h4>النفاخ الحاد عند الأغنام والأبقار</h4>
+      <div class="warning-box"><strong>🚨 طارئ — يمكن أن يُؤدي للوفاة خلال ساعات</strong></div>
+      <ul>
+        <li>ابعد الحيوان عن المرعى فوراً وأوقف الأكل.</li>
+        <li>امشِ معه ببطء لتحريك الغاز.</li>
+        <li>يمكن إعطاء 50-100 مل زيت نباتي عادي عبر الفم كإجراء مؤقت.</li>
+        <li>اتصل بالطبيب البيطري فوراً إذا ازداد التورم.</li>
+      </ul>
+      <div class="highlight-box"><strong>❌ لا تفعل:</strong>لا تضرب البطن ولا تبذل جهداً كبيراً — يمكن أن يُسبب التواء الكرش.</div>
+      <h4>الولادة العسيرة عند الأغنام والأبقار</h4>
+      <ul>
+        <li>إذا تجاوز المخاض النشط 30 دقيقة دون ولادة — اتصل بالطبيب فوراً.</li>
+        <li>تأكد من وضع الجنين (يجب أن يظهر الرأس والكفان أولاً).</li>
+        <li>لا تحاول سحب الجنين بقوة بدون توجيه بيطري — قد يسبب كسوراً.</li>
+      </ul>
+      <h4>نوبات الصرع أو الشلل عند الكلاب والقطط</html>
+      <ul>
+        <li>أبعد الحيوان عن الأثاث والأشياء الصلبة.</li>
+        <li>لا تضع يدك في فمه — قد يعضك لاإرادياً.</li>
+        <li>وثّق مدة النوبة بالفيديو (مفيد جداً للتشخيص).</li>
+        <li>إذا استمرت أكثر من 5 دقائق → طوارئ فورية.</li>
+      </ul>
+      <h4>الجرح والنزيف</h4>
+      <div class="highlight-box"><strong>🩹 الإسعاف الأولي:</strong><br>1. اضغط على الجرح بقماش نظيف.<br>2. لا تضع فلفل أو ملح أو مواد تقليدية.<br>3. اغسل بالماء والصابون إذا كان الجرح بسيطاً.<br>4. اتصل بالطبيب لتحديد ما إذا كان الجرح يحتاج خياطة أو لقاح تيتانوس.</div>
+      <h4>متى تتصل بالطبيب البيطري فوراً؟</h4>
+      <ul>
+        <li>نفوق مفاجئ دون سبب واضح (احتمال مرض معدٍ).</li>
+        <li>ارتفاع حاد في درجة الحرارة (فوق 40.5°م).</li>
+        <li>صعوبة في التنفس أو زرقة اللسان.</li>
+        <li>فقدان التوازن أو أعراض عصبية.</li>
+        <li>إسهال دموي مستمر لأكثر من 24 ساعة.</li>
+      </ul>
+      <div class="highlight-box"><strong>📞 اتصل بد. سعيدي شعيب:</strong><br>+213 774 71 61 18 — متوفر 24/7 لحالات الطوارئ</div>
+      <div class="source">📚 المصادر: الجمعية البيطرية الجزائرية، First Aid for Livestock (FAO)، تجربة ميدانية د. سعيدي شعيب.</div>
+    `
+  },
+  {
+    id:9, emoji:'🍼',
+    tagClass:'tag-cattle', tagAr:'أبقار', tagEn:'Cattle', tagFr:'Bovins',
+    gradient:'linear-gradient(135deg,#922b21,#5b0000)',
+    titleAr:'الولادة عند الأبقار — من التحضير إلى رعاية العجل الوليد',
+    titleEn:'Calving in Cattle — From Preparation to Newborn Care',
+    titleFr:'Vêlage des vaches — De la préparation aux soins du veau',
+    summaryAr:'دليل مفصّل لإدارة ولادة الأبقار بسلامة: علامات الاقتراب من الولادة، مراحل المخاض، التدخل الصحيح، ورعاية العجل في الساعات الأولى.',
+    summaryEn:'Detailed guide for safe calving management: signs of approaching birth, labor stages, correct intervention, and newborn calf care.',
+    summaryFr:'Guide détaillé pour gérer le vêlage en toute sécurité: signes, phases du travail, intervention et soins du veau.',
+    contentAr:`
+      <p>الولادة هي من أحرج وأهم المراحل في حياة البقرة — إدارتها الصحيحة تضمن بقاء الأم والعجل وتُحدد مسار الإنتاج للموسم كله.</p>
+      <h4>علامات اقتراب الولادة</h4>
+      <div class="highlight-box"><strong>🔍 راقب هذه العلامات في الأيام 1-3 قبل الولادة:</strong><br>
+      • تضخم الضرع وتوتره مع نزول الحليب الأصفر (اللبأ).<br>
+      • ارتخاء الرباطات حول الذيل والقطن.<br>
+      • تورم الفرج وإفرازات مخاطية شفافة.<br>
+      • عزلة البقرة عن القطيع وكثرة الاستلقاء والنهوض.<br>
+      • انخفاض درجة حرارة الجسم إلى 38.2°م أو أقل.</div>
+      <h4>مراحل المخاض الثلاث</h4>
+      <table>
+        <tr><th>المرحلة</th><th>المدة الطبيعية</th><th>ما يحدث</th></tr>
+        <tr><td>1 — التمدد</td><td>2 – 6 ساعات</td><td>تمدد عنق الرحم، قلق، مغص خفيف</td></tr>
+        <tr><td>2 — الطرد</td><td>30 دقيقة – 2 ساعة</td><td>ظهور الكيس المائي ثم العجل</td></tr>
+        <tr><td>3 — المشيمة</td><td>أقل من 8 ساعات</td><td>خروج المشيمة بعد الولادة</td></tr>
+      </table>
+      <div class="warning-box"><strong>⏱️ متى تتدخل؟</strong> إذا مرّ أكثر من 30 دقيقة من بروز الحوافر دون ولادة → اتصل بالطبيب البيطري فوراً.</div>
+      <h4>الوضعيات الشاذة للجنين وكيف تُعرفها</h4>
+      <ul>
+        <li><strong>الوضع الطبيعي:</strong> الرأس فوق الكفين الأماميين.</li>
+        <li><strong>انعكاس الرأس:</strong> الكفان ظاهران والرأس مُلتوٍ — تحتاج تدخلاً بيطرياً.</li>
+        <li><strong>تقديم الخلف:</strong> ظهور الحافرين الخلفيين — تحتاج سرعة في السحب.</li>
+        <li><strong>توأم:</strong> يجب تحديد موضع كل جنين قبل المحاولة.</li>
+      </ul>
+      <h4>رعاية العجل الوليد — الساعات الأولى حاسمة</h4>
+      <div class="highlight-box"><strong>✅ بروتوكول الساعة الأولى:</strong><br>
+      1. تنظيف الممرات التنفسية من المخاط فوراً.<br>
+      2. تطهير السرة بمحلول البيتادين 7% — يمنع الإنتانات القاتلة.<br>
+      3. تقديم اللبأ (الكولوستروم) خلال أول ساعتين: 2-4 لتر — مصدر المناعة الوحيد للعجل.<br>
+      4. التأكد من قيام العجل والرضاعة خلال ساعة من الولادة.<br>
+      5. تسجيل تاريخ الولادة، الجنس، الوزن، واسم الأم في السجل.</div>
+      <div class="warning-box"><strong>⚠️ احتباس المشيمة:</strong> إذا لم تخرج المشيمة خلال 8-12 ساعة → لا تسحبها بيدك — أبلغ الطبيب البيطري لتجنب نزيف وعدوى الرحم.</div>
+      <h4>أمراض ما بعد الولادة الشائعة</h4>
+      <ul>
+        <li><strong>حمى اللبن (نقص الكالسيوم):</strong> ارتخاء تام، عدم القدرة على القيام — حقن كالسيوم وريدي عاجل.</li>
+        <li><strong>الكيتوسيس:</strong> في الأسابيع 2-4 بعد الولادة، انخفاض الإنتاج، رائحة الأسيتون — يستوجب تدخلاً بيطرياً عاجلاً.</li>
+        <li><strong>التهاب الرحم:</strong> إفرازات كريهة بعد الولادة — يستوجب علاجاً بيطرياً متخصصاً فورياً.</li>
+      </ul>
+      <div class="source">📚 المصادر: Beef Cattle Handbook (Oklahoma State Univ.)، ITELV الجزائر، تجربة د. سعيدي شعيب.</div>
+    `
+  },
+  {
+    id:10, emoji:'🥛',
+    tagClass:'tag-cattle', tagAr:'أبقار', tagEn:'Cattle', tagFr:'Bovins',
+    gradient:'linear-gradient(135deg,#1a5276,#0a2a40)',
+    titleAr:'إنتاج الحليب عند الأبقار — تحسين الكمية والجودة',
+    titleEn:'Milk Production in Cattle — Improving Quantity & Quality',
+    titleFr:'Production laitière bovine — Améliorer quantité et qualité',
+    summaryAr:'كل ما يحتاجه مربي الأبقار لزيادة إنتاج الحليب وتحسين جودته: التغذية، الحلب الصحيح، أمراض الضرع، وتقنيات الإدارة الحديثة.',
+    summaryEn:'Everything dairy farmers need to increase milk production and improve quality: nutrition, milking, udder diseases and modern management.',
+    summaryFr:'Tout ce dont l\'éleveur laitier a besoin pour améliorer la production.',
+    contentAr:`
+      <p>إنتاج الحليب في الجزائر في ازدياد مستمر، والبقرة الهولشتاين هي السلالة المهيمنة. تحقيق إنتاجية عالية (20-30 لتر/يوم) يتطلب إدارة متكاملة لا تقتصر على التغذية فقط.</p>
+      <h4>منحنى الإنتاج الطبيعي (Lactation Curve)</h4>
+      <div class="highlight-box"><strong>📈 مراحل الإنتاج:</strong><br>
+      • أسبوع 1-3: ارتفاع تدريجي — أهم مرحلة غذائية.<br>
+      • أسبوع 4-8: ذروة الإنتاج (Peak) — يجب ألا تنخفض التغذية.<br>
+      • أسبوع 9-20: استقرار وانخفاض تدريجي طبيعي.<br>
+      • أسبوع 21-40: تجفيف (Dry Off) استعداداً للولادة القادمة.</div>
+      <h4>التغذية خلال مراحل الإنتاج</h4>
+      <table>
+        <tr><th>المرحلة</th><th>الاحتياج اليومي (بروتين خام)</th><th>الطاقة (UFL)</th></tr>
+        <tr><td>قبل الولادة (3 أسابيع)</td><td>12-14%</td><td>7-8</td></tr>
+        <tr><td>الذروة (4-8 أسابيع)</td><td>17-18%</td><td>16-18</td></tr>
+        <tr><td>منتصف الإنتاج</td><td>15-16%</td><td>12-14</td></tr>
+        <tr><td>التجفيف</td><td>12%</td><td>6-7</td></tr>
+      </table>
+      <h4>التهاب الضرع (Mastitis) — الخطر الأول لمزارع الحليب</h4>
+      <p>التهاب الضرع يُقلّل إنتاج الحليب بنسبة 20-30% ويُسبّب خسائر فادحة. البكتيريا الرئيسية المسببة: <em>Staphylococcus aureus</em> و<em>Streptococcus agalactiae</em>.</p>
+      <div class="warning-box"><strong>🔴 الأعراض:</strong> تورم وحرارة الربع المصاب، حليب متكتل أو دموي، ألم عند اللمس، أحياناً حمى وانكسار.</div>
+      <ul>
+        <li><strong>التشخيص:</strong> اختبار كاليفورنيا (CMT) — بسيط وسريع في المزرعة.</li>
+        <li><strong>العلاج:</strong> مضادات حيوية داخل الضرع (إنترامامري) + حقن عضلية حسب شدة الحالة.</li>
+        <li><strong>الوقاية:</strong> تطهير الحلمات قبل وبعد الحلب، تجفيف علاجي (Dry Cow Therapy)، بيئة نظيفة جافة.</li>
+      </ul>
+      <h4>الحلب الصحيح — خطوات لا تُتجاوز</h4>
+      <ul>
+        <li>غسل الضرع بماء دافئ ومسحه بمنشفة مخصصة لكل بقرة.</li>
+        <li>رمي أول 3 قذفات — تحتوي على أعلى تركيز بكتيري.</li>
+        <li>إزالة الحلابة فور انتهاء الحليب — منع فراغ الحلمة يمنع التهاب الضرع.</li>
+        <li>تطهير الحلمات بعد كل حلبة بمحلول يود 0.5-1%.</li>
+        <li>الحلب مرتين يومياً بفاصل 12 ساعة للحفاظ على الإنتاج.</li>
+      </ul>
+      <h4>أسباب انخفاض إنتاج الحليب فجأة</h4>
+      <ul>
+        <li>التهاب الضرع (أكثر الأسباب شيوعاً).</li>
+        <li>ضغط الحر — توفير تبريد وماء بارد ضروري في الصيف.</li>
+        <li>نقص التغذية أو تغيير مفاجئ في العليقة.</li>
+        <li>الإجهاد أو الخوف — الهدوء أثناء الحلب يزيد الإنتاج 10-15%.</li>
+        <li>إعادة الحمل — الإنتاج ينخفض طبيعياً في الشهر الخامس.</li>
+      </ul>
+      <div class="source">📚 المصادر: National Mastitis Council، معهد الحيوان ITELV الجزائر، FAO Dairy Production، د. سعيدي شعيب.</div>
+    `
+  },
+  {
+    id:11, emoji:'🦷',
+    tagClass:'tag-cattle', tagAr:'أبقار', tagEn:'Cattle', tagFr:'Bovins',
+    gradient:'linear-gradient(135deg,#6c3483,#3b1a5a)',
+    titleAr:'أمراض الجهاز الهضمي عند الأبقار — التشخيص والعلاج',
+    titleEn:'Digestive System Diseases in Cattle — Diagnosis & Treatment',
+    titleFr:'Maladies digestives bovines — Diagnostic et traitement',
+    summaryAr:'الجهاز الهضمي للبقرة معقد وحساس. تعرّف على أبرز أمراضه من النفاخ والإزاحة إلى القرحة والتسمم الكرشي مع طرق العلاج.',
+    summaryEn:'The bovine digestive system is complex. Learn about major diseases from bloat and displacement to acidosis and ulcers.',
+    summaryFr:'Le système digestif bovin est complexe. Découvrez les principales maladies et leurs traitements.',
+    contentAr:`
+      <p>البقرة مجترّة — معدتها تتكون من 4 حجرات (الكرش، الشبكة، الأوماسوس، الأبوماسوس)، وهذا التعقيد يجعلها عرضة لأمراض هضمية خاصة لا تصيب الحيوانات الأحادية المعدة.</p>
+      <h4>1. النفاخ الحاد (Bloat)</h4>
+      <p>تراكم الغاز في الكرش — أحد أخطر الطوارئ البيطرية عند الأبقار.</p>
+      <div class="warning-box"><strong>🚨 علامات الخطر:</strong> تضخم الجانب الأيسر بشكل واضح، صعوبة في التنفس، تمدد الفم، قد يؤدي للموت خلال ساعة.</div>
+      <table>
+        <tr><th>النوع</th><th>السبب</th><th>الإسعاف الأولي</th></tr>
+        <tr><td>نفاخ رغوي</td><td>مراعي البقوليات (برسيم)، أعلاف مطحونة</td><td>إبعاد عن المرعى فوراً + الاتصال بالطبيب البيطري عاجلاً</td></tr>
+        <tr><td>نفاخ حر</td><td>انسداد المريء بجسم غريب</td><td>تدخل بيطري طارئ — مسبار معدي أو بزل الكرش يُجريه الطبيب</td></tr>
+      </table>
+      <h4>2. إزاحة الأبوماسوس (Displaced Abomasum)</h4>
+      <p>انزياح المعدة الحقيقية يساراً أو يميناً — يحدث غالباً في الأسابيع 2-6 بعد الولادة.</p>
+      <ul>
+        <li>الأعراض: انخفاض مفاجئ في الإنتاج، قلة الأكل، إسهال خفيف، صوت "القرقعة" عند الطرق على الجنب.</li>
+        <li>التشخيص: قرع وتسمع الجانب الأيسر (أو الأيمن).</li>
+        <li>العلاج: جراحي في الغالب — دحرجة أو تثبيت الأبوماسوس.</li>
+        <li>الوقاية: تغذية متوازنة قبل الولادة وتجنب السمنة الزائدة.</li>
+      </ul>
+      <h4>3. الحماض الكرشي (Rumen Acidosis)</h4>
+      <p>يحدث عند الإفراط في العليقة المركزة (حبوب) مع نقص الأليياف الخشنة.</p>
+      <div class="highlight-box"><strong>📋 الأشكال:</strong><br>
+      • <strong>حاد:</strong> كرش متوقف، ترنح، قد يؤدي للوفاة — علاج طارئ بمحلول بيكربونات وريدي.<br>
+      • <strong>مزمن (تحت الحاد):</strong> انخفاض تدريجي في الإنتاج، تعرض لتهاب الحوافر، شعير الشعور بالتعب.</div>
+      <ul>
+        <li>الوقاية: نسبة أليياف خشنة لا تقل عن 35% من المادة الجافة.</li>
+        <li>يمكن استشارة الطبيب البيطري لإضافة مواد عازلة مناسبة في عليقة الذروة.</li>
+        <li>التحول التدريجي من علف لآخر لا يقل عن أسبوعين.</li>
+      </ul>
+      <h4>4. قرحة الأبوماسوس (Abomasal Ulcer)</h4>
+      <ul>
+        <li>الأعراض: إسهال أسود (براز مُدمّى مُهضوم)، فقدان الشهية، ألم عند الضغط على البطن.</li>
+        <li>الأسباب: ضغط نفسي، عدوى بكتيرية، نقص الألياف.</li>
+        <li>العلاج: يُحدده الطبيب البيطري بعد التشخيص — عادةً علاج دوائي مناسب + راحة وعليقة لطيفة.</li>
+      </ul>
+      <h4>5. الإسهال عند العجول (Calf Scours)</h4>
+      <div class="warning-box"><strong>⚠️ أخطر أسباب نفوق العجول تحت شهر:</strong> الجفاف الناتج عن الإسهال يقتل خلال 24-48 ساعة.</div>
+      <table>
+        <tr><th>العمر</th><th>المسبب الأكثر شيوعاً</th><th>التدخل المطلوب</th></tr>
+        <tr><td>1-3 أيام</td><td>E. coli</td><td>إماهة وريدية عاجلة + علاج بيطري فوري</td></tr>
+        <tr><td>5-15 يوم</td><td>Rotavirus / Coronavirus</td><td>إماهة + دعم داعم تحت إشراف الطبيب</td></tr>
+        <tr><td>1-4 أسابيع</td><td>Cryptosporidium</td><td>علاج وقائي يُحدده الطبيب البيطري</td></tr>
+      </table>
+      <div class="source">📚 المصادر: Merck Veterinary Manual، Bovine Practitioner Journal، ITELV الجزائر، د. سعيدي شعيب.</div>
+    `
+  },
+  {
+    id:12, emoji:'🦴',
+    tagClass:'tag-cattle', tagAr:'أبقار', tagEn:'Cattle', tagFr:'Bovins',
+    gradient:'linear-gradient(135deg,#1e8449,#0a3d1f)',
+    titleAr:'أمراض الحوافر والقدم عند الأبقار — الوقاية والعلاج',
+    titleEn:'Hoof & Foot Diseases in Cattle — Prevention & Treatment',
+    titleFr:'Maladies des onglons et pieds bovins — Prévention et traitement',
+    summaryAr:'أمراض الحوافر من أكثر مسببات الخسائر الاقتصادية في مزارع الأبقار — تعرّف على تقليم الحوافر، العرج، تعفن القدم، والحُمّى الحوافرية.',
+    summaryEn:'Hoof diseases are among the most economically costly in cattle farms. Learn about trimming, lameness, foot rot and laminitis.',
+    summaryFr:'Les maladies des onglons causent d\'importantes pertes économiques. Découvrez la parage, la boiterie et les traitements.',
+    contentAr:`
+      <p>العرج عند الأبقار يُخفّض إنتاج الحليب بنسبة 20-35%، ويؤثر سلباً على التكاثر والوزن — وهو المشكلة الثالثة الأكثر تكلفة في مزارع الألبان بعد الولادة والتهاب الضرع.</p>
+      <h4>أبرز أمراض الحوافر في الجزائر</h4>
+      <table>
+        <tr><th>المرض</th><th>المسبب</th><th>الأعراض</th><th>التدخل المطلوب</th></tr>
+        <tr><td>تعفن القدم (Foot Rot)</td><td>بكتيريا لاهوائية</td><td>تورم فوق الحافرة، رائحة كريهة، عرج حاد</td><td>علاج بيطري عاجل يُحدده الطبيب المرخص</td></tr>
+        <tr><td>التهاب الجلد الرقمي (Digital Dermatitis)</td><td>Treponema spp.</td><td>تقرحات مؤلمة خلف الحافرة</td><td>علاج موضعي يصفه الطبيب البيطري</td></tr>
+        <tr><td>الحمّى الحوافرية (Laminitis)</td><td>حماض كرشي مزمن</td><td>عرج، حوافر ساخنة، ميل للاستلقاء</td><td>تدخل بيطري + تقليم + تعديل العليقة</td></tr>
+        <tr><td>قرحة النعل (Sole Ulcer)</td><td>ضغط + تغذية</td><td>نزيف أو تقرح في قاع الحافرة</td><td>تقليم علاجي + حذاء مطاطي</td></tr>
+      </table>
+      <h4>تقليم الحوافر الوقائي (Functional Hoof Trimming)</h4>
+      <p>التقليم الوقائي من أهم الممارسات في مزارع الأبقار — يُنصح به مرتين في السنة: قبل موسم الولادة وبعد ذروة الإنتاج.</p>
+      <div class="highlight-box"><strong>✂️ خطوات التقليم الصحيح:</strong><br>
+      1. تقليم الطول إلى 7.5 سم.<br>
+      2. تسطيح قاع النعل بزاوية 50°.<br>
+      3. تفريغ مناطق الضغط عند وجود قرحة.<br>
+      4. تنظيف الشقوق بين الإصبعين.<br>
+      5. تطهير بعد التقليم بمحلول كوبريت الزنك.</div>
+      <h4>حمامات الأقدام (Footbaths)</h4>
+      <ul>
+        <li>الهدف: تقليل العبء البكتيري على الحوافر وعلاج التهاب الجلد الرقمي.</li>
+        <li>تركيز كوبريت الزنك: 10% — الأكثر فاعلية وأماناً للبيئة.</li>
+        <li>أبعاد الحوض المثالي: 3 متر طول × 60 سم عرض × 15 سم عمق.</li>
+        <li>تكرار الاستخدام: مرة يومياً في موسم الأمطار، مرة كل يومين في الصيف.</li>
+        <li>تغيير المحلول بعد كل 200-300 بقرة.</li>
+      </ul>
+      <h4>دور التغذية في صحة الحوافر</h4>
+      <ul>
+        <li>البيوتين (Biotin): 20 مغ/يوم يُقوّي جدار الحافرة ويقلل الرخاوة.</li>
+        <li>الزنك العضوي: يُسرّع ترميم الأنسجة التالفة.</li>
+        <li>نسبة Ca:P = 2:1 ضرورية لمتانة العظام والحوافر.</li>
+        <li>تجنب السمنة المفرطة قبل الولادة (تسجين الكبد).</li>
+      </ul>
+      <div class="source">📚 المصادر: Lameness in Cattle (3rd Ed.)، Hoof Health Conference، ITELV الجزائر، د. سعيدي شعيب.</div>
+    `
+  },
+  {
+    id:13, emoji:'❤️',
+    tagClass:'tag-cattle', tagAr:'أبقار', tagEn:'Cattle', tagFr:'Bovins',
+    gradient:'linear-gradient(135deg,#884ea0,#4a235a)',
+    titleAr:'التناسل والخصوبة عند الأبقار — تحسين معدل الحمل',
+    titleEn:'Reproduction & Fertility in Cattle — Improving Pregnancy Rates',
+    titleFr:'Reproduction et fertilité bovine — Améliorer les taux de gestation',
+    summaryAr:'الأداء التناسلي هو قلب ربحية مزرعة الأبقار. دليل شامل حول دورة الشبق، التلقيح الاصطناعي، تشخيص الحمل، وعلاج مشاكل الخصوبة.',
+    summaryEn:'Reproductive performance is the heart of cattle farm profitability. Comprehensive guide on estrus, AI, pregnancy diagnosis and fertility problems.',
+    summaryFr:'La performance reproductive est au cœur de la rentabilité. Guide sur le cycle, l\'IA, le diagnostic de gestation et l\'infertilité.',
+    contentAr:`
+      <p>الهدف الذهبي في مزارع الألبان: بقرة واحدة = ولادة واحدة كل 12-13 شهراً. أي تأخير في الحمل يُقلّص الإنتاج ويرفع التكاليف.</p>
+      <h4>دورة الشبق عند الأبقار</h4>
+      <div class="highlight-box"><strong>📅 المعلومات الأساسية:</strong><br>
+      • مدة الدورة: 21 يوم (18-24 طبيعي).<br>
+      • مدة الشبق (الحرارة): 12-18 ساعة فقط.<br>
+      • وقت الإباضة: 10-14 ساعة بعد نهاية الشبق.<br>
+      • أفضل وقت للتلقيح: 6-12 ساعة من ظهور علامات الشبق.</div>
+      <h4>علامات الشبق — كيف تكتشفها؟</h4>
+      <ul>
+        <li>قبول البقرة أن تُركبها بقرة أخرى (أوضح علامة).</li>
+        <li>إفرازات مخاطية شفافة من الفرج.</li>
+        <li>حركة مفرطة وقلق وبحث عن رفيقات.</li>
+        <li>انخفاض طفيف في إنتاج الحليب ذلك اليوم.</li>
+        <li>احمرار وتورم الفرج.</li>
+      </ul>
+      <h4>التلقيح الاصطناعي (AI) — المزايا والخطوات</h4>
+      <p>التلقيح الاصطناعي هو الطريقة الأكثر شيوعاً في الجزائر للحصول على سلالات عالية الإنتاج.</p>
+      <ul>
+        <li><strong>المزايا:</strong> الوصول لأفضل الجينات عالمياً، التحكم في السلالة، تقليل نقل الأمراض التناسلية.</li>
+        <li><strong>الجرعة:</strong> تُحفظ في نيتروجين سائل (-196°م) وتُذاب في 35°م لمدة 30-45 ثانية.</li>
+        <li><strong>الإيداع:</strong> منتصف جسم الرحم باستخدام بندقية التلقيح.</li>
+        <li><strong>نسبة النجاح:</strong> 50-65% في التلقيحة الأولى عند الكشف الجيد عن الشبق.</li>
+      </ul>
+      <h4>تزامن الشبق (Synchronization Protocols)</h4>
+      <table>
+        <tr><th>البروتوكول</th><th>آلية العمل</th><th>متى يُستخدم؟</th></tr>
+        <tr><td>Ovsynch</td><td>تنظيم هرموني — يُطبَّق حصرياً من الطبيب البيطري</td><td>تلقيح دون كشف شبق</td></tr>
+        <tr><td>Cosynch</td><td>تنظيم هرموني — يُطبَّق حصرياً من الطبيب البيطري</td><td>لتوفير وقت المزرعة</td></tr>
+        <tr><td>CIDR Protocol</td><td>تنظيم هرموني — يُطبَّق حصرياً من الطبيب البيطري</td><td>الأبقار في نقص تغذوي</td></tr>
+      </table>
+      <div class="warning-box"><strong>⚖️ تنبيه قانوني:</strong> جميع بروتوكولات التزامن الهرموني تستلزم وصفة طبية بيطرية وتطبيقاً من الطبيب البيطري المرخص — طبقاً للمواد 42 و43 من القانون 88-08 المعدَّل بالقانون 19-03.</div>
+      <h4>أسباب تأخر الحمل وعلاجها</h4>
+      <ul>
+        <li><strong>الكيس المبيضي (Ovarian Cyst):</strong> تلقيح مستمر دون حمل، حرارة متكررة — يحتاج تدخلاً هرمونياً متخصصاً من الطبيب البيطري.</li>
+        <li><strong>التهاب الرحم المزمن (Metritis):</strong> إفرازات دائمة — علاج بيطري متخصص يُحدده الطبيب المرخص بعد الفحص.</li>
+        <li><strong>نقص الطاقة:</strong> الأبقار التي فقدت وزناً كبيراً بعد الولادة تتأخر في الشبق — تحسين التغذية أولاً.</li>
+        <li><strong>نقص الفيتامينات والمعادن:</strong> يُسبّب إجهاضاً متكرراً — مكملات غذائية يصفها الطبيب البيطري قبل الولادة.</li>
+      </ul>
+      <h4>تشخيص الحمل</h4>
+      <ul>
+        <li><strong>الجس الشرجي (Rectal Palpation):</strong> من الأسبوع 6 — دقيق وغير مكلف.</li>
+        <li><strong>الأمواج فوق الصوتية (Échographie):</strong> من الأسبوع 4 — الأفضل لتحديد جنس الجنين وعدده.</li>
+        <li><strong>اختبار البروجستيرون:</strong> من اليوم 24 — متوفر في الجزائر.</li>
+      </ul>
+      <div class="source">📚 المصادر: Reproduction in Domestic Animals (Hafez)، INRA الجزائر، Thériogénologie FAO، د. سعيدي شعيب.</div>
+    `
+  }
+];
+
+/* ════════════════════════════
+   TRANSLATIONS
+════════════════════════════ */
+const T = {
+  ar:{dir:'rtl',lang:'ar',
+    nav_home:'الرئيسية',nav_about:'الطبيب',nav_services:'الخدمات',nav_gallery:'المعرض',
+    nav_reviews:'الآراء',nav_articles:'مقالات',nav_contact:'اتصل بنا',nav_booking:'احجز موعد',nav_cta:'احجز موعد',
+    hero_badge:'🏥 عيادة بيطرية متخصصة · تيبازة، الجزائر',
+    hero_title:'رعاية بيطرية <span>خبيرة</span><br>لحيواناتكم',
+    hero_sub:'نقدم أفضل الخدمات الطبية البيطرية للمزارعين وأصحاب الحيوانات الأليفة في تيبازة والجزائر.',
+    hero_btn1:'احجز موعدك الآن',hero_btn2:'واتساب',
+    stat1:'حيوان تمت معالجته',stat2:'سنوات خبرة',stat3:'متوفر للطوارئ',
+    about_lbl:'من نحن',about_desc:'طبيب بيطري متخصص، يقدم خدماته للمزارعين وأصحاب الحيوانات الأليفة في منطقة تيبازة والجزائر.',
+    creds_title:'📋 المسيرة الأكاديمية',
+    cred1:'دكتور في الطب البيطري — جامعة الإخوة منتوري قسنطينة 1',
+    cred2:'معهد العلوم البيطرية — الخروب، قسنطينة',
+    cred3:'خريج دفعة 2017',cred4:'يمارس نشاطه في تيبازة، الجزائر',
+    f1t:'تكوين أكاديمي رفيع',f1d:'خريج معهد العلوم البيطرية الخروب، جامعة الإخوة منتوري قسنطينة 1 — دفعة 2017.',
+    f2t:'خبرة ميدانية واسعة',f2d:'أكثر من 8 سنوات في مزارع الأغنام والدواجن والأبقار بولاية تيبازة.',
+    f3t:'وقاية وعلاج متكامل',f3d:'برامج تطعيم ومتابعة صحية دورية مع أحدث الأساليب الطبية.',
+    about_cta:'تحدث مع الدكتور',
+    srv_lbl:'ما نقدمه',srv_title:'خدماتنا <span>المتميزة</span>',srv_desc:'رعاية طبية متكاملة لجميع أنواع الحيوانات.',
+    s1t:'الفحص الطبي الشامل',s1d:'تشخيص دقيق ومتابعة دورية بأحدث الأجهزة.',
+    s2t:'التلقيح والوقاية',s2d:'برامج تطعيم وقائية ضد الأمراض المعدية.',
+    s3t:'زيارات ميدانية',s3d:'نصل إليكم في مزارعكم لرعاية المواشي.',
+    s4t:'رعاية الحيوانات الأليفة',s4d:'خدمات متخصصة للقطط والكلاب.',
+    s5t:'التشخيص المختبري',s5d:'تحاليل متطورة لتشخيص الأمراض بدقة.',
+    s6t:'الأمن الحيوي',s6d:'حماية مزرعتكم من الأوبئة والأمراض.',
+    gal_lbl:'معرض الصور',gal_title:'لحظات من <span>عملنا</span>',gal_desc:'صور من عيادتنا وزياراتنا الميدانية.',
+    g1:'العيادة البيطرية',g2:'فحص الأغنام',g3:'مزرعة الدواجن',g4:'رعاية الكلاب',g5:'فحص الأبقار',
+    rev_lbl:'آراء العملاء',rev_title:'ماذا يقول <span>عملاؤنا</span>',rev_desc:'تجارب حقيقية من مزارعين وأصحاب حيوانات أليفة.',
+    t1:'"الدكتور سعيدي شعيب طبيب ممتاز، أنقذ قطيعي من مرض خطير بتشخيص سريع ودقيق."',
+    t2:'"خدمة احترافية ورعاية ممتازة لكلبتي. الدكتور صبور ويعامل الحيوانات بلطف."',
+    t3:'"يزور مزرعتنا بانتظام ويتابع التلقيح بجدية. بفضله انخفض معدل المرض بشكل ملحوظ."',
+    bk_lbl:'احجز الآن',bk_title:'حجز <span>موعد</span>',bk_desc:'احجز موعدك بسهولة وسنتواصل معك لتأكيد الزيارة.',
+    bi1h:'العنوان',bi1p:'تيبازة، الجزائر',bi2h:'الهاتف',bi3h:'ساعات العمل',
+    bi3p:'السبت – الخميس: 8ص – 7م\nطوارئ: 24/7',bi4h:'البريد',
+    form_title:'أرسل طلب الحجز',fn_lbl:'الاسم الكامل *',fp_lbl:'رقم الهاتف *',fa_lbl:'نوع الحيوان *',
+    f_sheep:'أغنام',f_poultry:'دواجن',f_cattle:'أبقار',f_dog:'كلب',f_cat:'قط',f_other:'أخرى',
+    fs_lbl:'نوع الخدمة',fs_exam:'فحص طبي',fs_vac:'تلقيح',fs_farm:'زيارة مزرعة',fs_emrg:'طوارئ',
+    fd_lbl:'التاريخ المفضل',fm_lbl:'وصف الحالة',f_submit:'إرسال طلب الحجز',
+    ok_title:'تم استلام طلبك!',ok_msg:'سنتواصل معك في أقرب وقت لتأكيد الموعد.',
+    art_lbl:'ركن المعرفة البيطرية',art_title:'مقالات <span>علمية موثوقة</span>',
+    art_desc:'معلومات بيطرية شاملة محلية وعالمية، بقلم الدكتور سعيدي شعيب — خريج معهد العلوم البيطرية الخروب، دفعة 2017.',
+    art_read:'اقرأ المقال كاملاً ←',
+    ct_lbl:'تواصل معنا',ct_title:'نحن هنا <span>لخدمتكم</span>',ct_desc:'متواجدون لخدمتكم في أي وقت.',
+    ci1l:'الموقع',ci1p:'تيبازة، الجزائر',ci2l:'الهاتف',ci3l:'البريد',ci4l:'ساعات العمل',ci4p:'السبت – الخميس: 8ص – 7م',
+    soc_wa:'واتساب',soc_fb:'فيسبوك',soc_ig:'إنستغرام',
+    map_loc:'تيبازة، الجزائر',map_btn:'فتح في خرائط جوجل',
+    ft_sub:'عيادة الدكتور سعيدي شعيب للطب البيطري',
+    ft_cred:'خريج معهد العلوم البيطرية الخروب — جامعة منتوري قسنطينة 1 — دفعة 2017',
+    ft_copy:'© 2024 جميع الحقوق محفوظة — VetCareDZ | د. سعيدي شعيب'
+  },
+  en:{dir:'ltr',lang:'en',
+    nav_home:'Home',nav_about:'About',nav_services:'Services',nav_gallery:'Gallery',
+    nav_reviews:'Reviews',nav_articles:'Articles',nav_contact:'Contact',nav_booking:'Book Now',nav_cta:'Book Now',
+    hero_badge:'🏥 Specialized Veterinary Clinic · Tipaza, Algeria',
+    hero_title:'Expert <span>Veterinary</span><br>Care for Your Animals',
+    hero_sub:'We provide the best veterinary services for farmers and pet owners in Tipaza and Algeria.',
+    hero_btn1:'Book an Appointment',hero_btn2:'WhatsApp',
+    stat1:'Animals Treated',stat2:'Years of Experience',stat3:'Emergency Available',
+    about_lbl:'About Us',about_desc:'Specialized veterinarian serving farmers and pet owners in the Tipaza region of Algeria.',
+    creds_title:'📋 Academic Background',
+    cred1:'Doctor of Veterinary Medicine — Frères Mentouri University, Constantine 1',
+    cred2:'Institut des Sciences Vétérinaires — El Khroub, Constantine',
+    cred3:'Class of 2017',cred4:'Practicing in Tipaza, Algeria',
+    f1t:'Top Academic Training',f1d:'Graduate of Institut des Sciences Vétérinaires El Khroub, Frères Mentouri University Constantine 1, class of 2017.',
+    f2t:'Extensive Field Experience',f2d:'8+ years of hands-on experience with sheep, poultry and cattle farms in Tipaza.',
+    f3t:'Full Prevention & Treatment',f3d:'Comprehensive vaccination programs and regular health monitoring.',
+    about_cta:'Talk to the Doctor',
+    srv_lbl:'What We Offer',srv_title:'Our <span>Services</span>',srv_desc:'Complete veterinary care for all animals.',
+    s1t:'Comprehensive Medical Exam',s1d:'Precise diagnosis and regular monitoring.',
+    s2t:'Vaccination & Prevention',s2d:'Preventive vaccination programs.',
+    s3t:'Farm Field Visits',s3d:'We come to you on your farm.',
+    s4t:'Pet Care',s4d:'Specialized services for cats and dogs.',
+    s5t:'Lab Diagnosis',s5d:'Advanced tests for accurate diagnosis.',
+    s6t:'Biosecurity',s6d:'Protect your farm from epidemics.',
+    gal_lbl:'Gallery',gal_title:'Moments from <span>Our Work</span>',gal_desc:'Photos from our clinic and farm visits.',
+    g1:'Veterinary Clinic',g2:'Sheep Examination',g3:'Poultry Farm',g4:'Dog Care',g5:'Cattle Checkup',
+    rev_lbl:'Client Reviews',rev_title:'What Our <span>Clients Say</span>',rev_desc:'Real experiences from our clients.',
+    t1:'"Dr. Saidi Chouaib is outstanding — saved my flock with fast accurate diagnosis."',
+    t2:'"Professional service and excellent care for my dog. Patient and gentle."',
+    t3:'"Regular farm visits and serious vaccination follow-up. Disease rates dropped significantly."',
+    bk_lbl:'Book Now',bk_title:'Book an <span>Appointment</span>',bk_desc:'Book easily and we\'ll confirm shortly.',
+    bi1h:'Address',bi1p:'Tipaza, Algeria',bi2h:'Phone',bi3h:'Working Hours',
+    bi3p:'Sat – Thu: 8am – 7pm\nEmergency: 24/7',bi4h:'Email',
+    form_title:'Send Booking Request',fn_lbl:'Full Name *',fp_lbl:'Phone *',fa_lbl:'Animal Type *',
+    f_sheep:'Sheep',f_poultry:'Poultry',f_cattle:'Cattle',f_dog:'Dog',f_cat:'Cat',f_other:'Other',
+    fs_lbl:'Service Type',fs_exam:'Medical Exam',fs_vac:'Vaccination',fs_farm:'Farm Visit',fs_emrg:'Emergency',
+    fd_lbl:'Preferred Date',fm_lbl:'Describe Case',f_submit:'Send Booking Request',
+    ok_title:'Request Received!',ok_msg:'We\'ll contact you shortly to confirm.',
+    art_lbl:'Knowledge Center',art_title:'Reliable <span>Scientific Articles</span>',
+    art_desc:'Comprehensive local and international veterinary information by Dr. Saidi Chouaib — ISV El Khroub, Mentouri Constantine 1, class of 2017.',
+    art_read:'Read full article →',
+    ct_lbl:'Contact',ct_title:'We Are Here <span>for You</span>',ct_desc:'Available anytime for your questions.',
+    ci1l:'Location',ci1p:'Tipaza, Algeria',ci2l:'Phone',ci3l:'Email',ci4l:'Working Hours',ci4p:'Sat – Thu: 8am – 7pm',
+    soc_wa:'WhatsApp',soc_fb:'Facebook',soc_ig:'Instagram',
+    map_loc:'Tipaza, Algeria',map_btn:'Open in Google Maps',
+    ft_sub:'Dr. Saidi Chouaib Veterinary Clinic',
+    ft_cred:'Graduate of ISV El Khroub — Frères Mentouri University Constantine 1 — Class of 2017',
+    ft_copy:'© 2024 All Rights Reserved — VetCareDZ | Dr. Saidi Chouaib'
+  },
+  fr:{dir:'ltr',lang:'fr',
+    nav_home:'Accueil',nav_about:'À propos',nav_services:'Services',nav_gallery:'Galerie',
+    nav_reviews:'Avis',nav_articles:'Articles',nav_contact:'Contact',nav_booking:'Réserver',nav_cta:'Réserver',
+    hero_badge:'🏥 Clinique Vétérinaire Spécialisée · Tipaza, Algérie',
+    hero_title:'Soins Vétérinaires <span>Experts</span><br>pour Vos Animaux',
+    hero_sub:'Nous offrons les meilleurs services vétérinaires aux éleveurs et propriétaires d\'animaux à Tipaza et en Algérie.',
+    hero_btn1:'Prendre Rendez-vous',hero_btn2:'WhatsApp',
+    stat1:'Animaux Traités',stat2:'Ans d\'Expérience',stat3:'Urgences 24/7',
+    about_lbl:'Qui Sommes-Nous',about_desc:'Vétérinaire spécialisé au service des éleveurs et propriétaires d\'animaux dans la région de Tipaza.',
+    creds_title:'📋 Parcours Académique',
+    cred1:'Docteur en Médecine Vétérinaire — Université Frères Mentouri Constantine 1',
+    cred2:'Institut des Sciences Vétérinaires — El Khroub, Constantine',
+    cred3:'Promotion 2017',cred4:'Exerce à Tipaza, Algérie',
+    f1t:'Formation Académique Élevée',f1d:'Diplômé de l\'Institut des Sciences Vétérinaires d\'El Khroub, Université Mentouri Constantine 1, promotion 2017.',
+    f2t:'Vaste Expérience Terrain',f2d:'Plus de 8 ans d\'expérience dans les élevages ovins, avicoles et bovins à Tipaza.',
+    f3t:'Prévention et Traitement',f3d:'Programmes complets de vaccination et suivi sanitaire régulier.',
+    about_cta:'Contacter le Docteur',
+    srv_lbl:'Nos Offres',srv_title:'Nos <span>Services</span>',srv_desc:'Soins vétérinaires complets pour tous les animaux.',
+    s1t:'Examen Médical Complet',s1d:'Diagnostic précis et suivi régulier.',
+    s2t:'Vaccination et Prévention',s2d:'Programmes vaccinaux contre les maladies infectieuses.',
+    s3t:'Visites en Ferme',s3d:'Nous nous déplaçons dans vos exploitations.',
+    s4t:'Soins Animaux de Cie',s4d:'Services spécialisés chats et chiens.',
+    s5t:'Diagnostic Laboratoire',s5d:'Analyses pour un diagnostic précis.',
+    s6t:'Biosécurité',s6d:'Protéger votre ferme des épidémies.',
+    gal_lbl:'Galerie',gal_title:'Moments de <span>Notre Travail</span>',gal_desc:'Photos de notre clinique et visites terrain.',
+    g1:'Clinique Vétérinaire',g2:'Examen Ovin',g3:'Élevage Avicole',g4:'Soins Canins',g5:'Examen Bovin',
+    rev_lbl:'Avis Clients',rev_title:'Ce que Disent Nos <span>Clients</span>',rev_desc:'Expériences réelles de nos clients.',
+    t1:'"Dr. Saidi Chouaib est remarquable — a sauvé mon troupeau avec un diagnostic rapide et précis."',
+    t2:'"Service professionnel et soins excellents pour mon chien. Patient et doux."',
+    t3:'"Visites régulières et suivi sérieux de la vaccination. Le taux de maladie a chuté."',
+    bk_lbl:'Réserver',bk_title:'Prendre <span>Rendez-vous</span>',bk_desc:'Réservez facilement, nous confirmerons rapidement.',
+    bi1h:'Adresse',bi1p:'Tipaza, Algérie',bi2h:'Téléphone',bi3h:'Horaires',
+    bi3p:'Sam – Jeu: 8h – 19h\nUrgences: 24/7',bi4h:'E-mail',
+    form_title:'Envoyer une Demande',fn_lbl:'Nom Complet *',fp_lbl:'Téléphone *',fa_lbl:'Type d\'Animal *',
+    f_sheep:'Moutons',f_poultry:'Volailles',f_cattle:'Bovins',f_dog:'Chien',f_cat:'Chat',f_other:'Autre',
+    fs_lbl:'Type de Service',fs_exam:'Examen',fs_vac:'Vaccination',fs_farm:'Visite Ferme',fs_emrg:'Urgence',
+    fd_lbl:'Date Préférée',fm_lbl:'Décrire le Cas',f_submit:'Envoyer la Demande',
+    ok_title:'Demande Reçue!',ok_msg:'Nous vous contacterons bientôt pour confirmer.',
+    art_lbl:'Centre de Savoir',art_title:'Articles <span>Scientifiques Fiables</span>',
+    art_desc:'Informations vétérinaires locales et internationales par Dr. Saidi Chouaib — ISV El Khroub, Mentouri Constantine 1, promotion 2017.',
+    art_read:'Lire l\'article complet →',
+    ct_lbl:'Contact',ct_title:'Nous Sommes Là <span>pour Vous</span>',ct_desc:'Disponibles à tout moment.',
+    ci1l:'Adresse',ci1p:'Tipaza, Algérie',ci2l:'Téléphone',ci3l:'E-mail',ci4l:'Horaires',ci4p:'Sam – Jeu: 8h – 19h',
+    soc_wa:'WhatsApp',soc_fb:'Facebook',soc_ig:'Instagram',
+    map_loc:'Tipaza, Algérie',map_btn:'Ouvrir dans Google Maps',
+    ft_sub:'Clinique Vétérinaire Dr. Saidi Chouaib',
+    ft_cred:'Diplômé ISV El Khroub — Université Mentouri Constantine 1 — Promotion 2017',
+    ft_copy:'© 2024 Tous Droits Réservés — VetCareDZ | Dr. Saidi Chouaib'
+  }
+};
+
+let lang = 'ar';
+
+function buildArticleCards() {
+  const grid = document.getElementById('articlesGrid');
+  grid.innerHTML = '';
+  ARTICLES.forEach((a,i) => {
+    const tag = lang==='ar'?a.tagAr:lang==='en'?a.tagEn:a.tagFr;
+    const title = lang==='ar'?a.titleAr:lang==='en'?a.titleEn:a.titleFr;
+    const summary = lang==='ar'?a.summaryAr:lang==='en'?a.summaryEn:a.summaryFr;
+    const readMore = T[lang].art_read || 'اقرأ المقال ←';
+    const card = document.createElement('div');
+    card.className = 'article-card reveal';
+    card.innerHTML = `
+      <div class="article-img" style="background:${a.gradient}">${a.emoji}</div>
+      <div class="article-body">
+        <span class="article-tag ${a.tagClass}">${tag}</span>
+        <h3>${title}</h3>
+        <p>${summary}</p>
+        <a class="article-read-more" onclick="openArticle(${a.id})" href="#">${readMore}</a>
+      </div>`;
+    grid.appendChild(card);
+    setTimeout(()=>{ card.classList.add('visible'); }, i*80 + 100);
+  });
+}
+
+function openArticle(id) {
+  const a = ARTICLES.find(x=>x.id===id);
+  if(!a) return;
+  const tag = lang==='ar'?a.tagAr:lang==='en'?a.tagEn:a.tagFr;
+  const title = lang==='ar'?a.titleAr:lang==='en'?a.titleEn:a.titleFr;
+  const content = a.contentAr; // all content in Arabic (main language for medical)
+  const byline = lang==='ar'
+    ? 'بقلم الدكتور سعيدي شعيب · خريج معهد العلوم البيطرية الخروب، جامعة منتوري قسنطينة 1 · 2017'
+    : lang==='en'
+    ? 'By Dr. Saidi Chouaib · ISV El Khroub, Mentouri University Constantine 1 · Class of 2017'
+    : 'Par Dr. Saidi Chouaib · ISV El Khroub, Université Mentouri Constantine 1 · Promo 2017';
+  document.getElementById('modalContent').innerHTML = `
+    <span class="article-tag modal-tag ${a.tagClass}">${tag}</span>
+    <h2 class="modal-title">${title}</h2>
+    <div class="modal-meta">
+      <span>🩺 ${byline}</span>
+    </div>
+    <div class="modal-content" dir="rtl" style="font-family:'Tajawal',serif">${content}</div>`;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+  return false;
+}
+
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+function closeModalOutside(e){
+  if(e.target===document.getElementById('modal')) closeModal();
+}
+
+function setLang(l){
+  lang=l;
+  const t=T[l];
+  document.documentElement.setAttribute('dir',t.dir);
+  document.documentElement.setAttribute('lang',t.lang);
+  document.body.className=l!=='ar'?`lang-${l}`:'';
+  document.querySelectorAll('[data-k]').forEach(el=>{
+    const k=el.getAttribute('data-k');
+    if(t[k]!==undefined){
+      if(el.tagName==='OPTION') el.textContent=t[k];
+      else el.innerHTML=t[k];
+    }
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    const v=btn.textContent.trim();
+    btn.classList.toggle('active',(l==='ar'&&v==='ع')||(l==='en'&&v==='EN')||(l==='fr'&&v==='FR'));
+  });
+  buildArticleCards();
+}
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);
+});
+
+function openMob(){ document.getElementById('mobileMenu').classList.add('open'); }
+function closeMob(){ document.getElementById('mobileMenu').classList.remove('open'); }
+
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*70);
+  });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+function submitForm(){
+  const n=document.getElementById('fn').value.trim();
+  const p=document.getElementById('fp').value.trim();
+  if(!n||!p){
+    alert(lang==='ar'?'يرجى إدخال الاسم ورقم الهاتف':lang==='fr'?'Veuillez remplir le nom et le numéro.':'Please enter name and phone.');
+    return;
+  }
+  document.getElementById('formContent').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+
+// Init
+buildArticleCards();
+</script>
 </body>
 </html>
